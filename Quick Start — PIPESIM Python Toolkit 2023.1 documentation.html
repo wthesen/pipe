@@ -1,0 +1,1870 @@
+<!DOCTYPE html>
+<!-- saved from url=(0109)file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/">
+
+    <title>Quick Start — PIPESIM Python Toolkit 2023.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="./Quick Start — PIPESIM Python Toolkit 2023.1 documentation_files/pygments.css">
+    <link rel="stylesheet" type="text/css" href="./Quick Start — PIPESIM Python Toolkit 2023.1 documentation_files/bizstyle.css">
+    
+    <script data-url_root="./" id="documentation_options" src="./Quick Start — PIPESIM Python Toolkit 2023.1 documentation_files/documentation_options.js.download"></script>
+    <script src="./Quick Start — PIPESIM Python Toolkit 2023.1 documentation_files/jquery.js.download"></script>
+    <script src="./Quick Start — PIPESIM Python Toolkit 2023.1 documentation_files/underscore.js.download"></script>
+    <script src="./Quick Start — PIPESIM Python Toolkit 2023.1 documentation_files/_sphinx_javascript_frameworks_compat.js.download"></script>
+    <script src="./Quick Start — PIPESIM Python Toolkit 2023.1 documentation_files/doctools.js.download"></script>
+    <script src="./Quick Start — PIPESIM Python Toolkit 2023.1 documentation_files/bizstyle.js.download"></script>
+    <link rel="index" title="Index" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/genindex.html">
+    <link rel="search" title="Search" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/search.html">
+    <link rel="next" title="Working with Excel" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/excel.html">
+    <link rel="prev" title="Changes From Previous Version" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/changes.html">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!--[if lt IE 9]>
+    <script src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/py-modindex.html" title="Python Module Index">modules</a> |</li>
+        <li class="right">
+          <a href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/excel.html" title="Working with Excel" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/changes.html" title="Changes From Previous Version" accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/index.html">PIPESIM Python Toolkit 2023.1 documentation</a> »</li>
+        <li class="nav-item nav-item-this"><a href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html">Quick Start</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="quick-start">
+<h1>Quick Start<a class="headerlink" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html#quick-start" title="Permalink to this heading">¶</a></h1>
+<p>The following section provides a quick reference guide to the properties,
+methods and classes available in the PIPESIM Python Toolkit. Working example
+scripts can be found in the PIPESIM installation under the Python Toolkit
+folder.</p>
+<p>The easiest way to investigate a model is through an interactive Python
+session. Code is executed as it is entered and the results are immediately
+seen.</p>
+<p>From the Windows Start menu, open and start VSCodium.
+Type the following commands into the interactive window to see the
+effect of performing them.</p>
+<section id="open-save-and-close">
+<h2>Open, Save and Close<a class="headerlink" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html#open-save-and-close" title="Permalink to this heading">¶</a></h2>
+<p>Open a model:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sixgill.pipesim</span> <span class="kn">import</span> <span class="n">Model</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span> <span class="o">=</span> <span class="n">Model</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">'C:/Temp/examples/models/CSN_301_Small Network.pips'</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Open a model and use the SI units of measurement for passing data:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">model</span> <span class="o">=</span> <span class="n">Model</span><span class="o">.</span><span class="n">open</span><span class="p">(</span>
+<span class="go">    filename='C:/Temp/examples/models/CSN_301_Small Network.pips',</span>
+<span class="go">    units=Units.SI)</span>
+</pre></div>
+</div>
+<p>Query details about the model:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">about</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Close the model:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Save the model:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Save the model as a new filename:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">'C:/Temp/myproject/Modified Small Network.pips'</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Save the model using Network perspective:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sixgill.core.resources</span> <span class="kn">import</span> <span class="n">ViewTypes</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">'C:/Temp/myproject/Modified Small Network.pips'</span><span class="p">,</span><span class="n">ViewTypes</span><span class="o">.</span><span class="n">NETWORK</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Create a new model:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">model</span> <span class="o">=</span> <span class="n">Model</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s1">'C:/Temp/myproject/New Small Network.pips'</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Open the current model in the UI:</p>
+<p>This will close the model in the Python Toolkit as the model cannot be edited at the same time in the Toolkit and UI.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">open_ui</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Open a specific model in the UI:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Model</span><span class="o">.</span><span class="n">open_ui</span><span class="p">(</span><span class="s1">'C:/Temp/myproject/New Small Network.pips'</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="query-the-model">
+<h2>Query the Model<a class="headerlink" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html#query-the-model" title="Permalink to this heading">¶</a></h2>
+<p>Operations on the model start by providing the context for the operation. The
+context defines what model components are then acted on. The simplest method
+is find() which returns a list of the model components within the context.</p>
+<p>List out all the components in the model:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">Name</span><span class="o">=</span><span class="n">ALL</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Look for all the chokes in the model:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sixgill.definitions</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">component</span><span class="o">=</span><span class="n">ModelComponents</span><span class="o">.</span><span class="n">CHOKE</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Alternatively, if we already know the choke keyword:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">Choke</span><span class="o">=</span><span class="n">ALL</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Find if an equipment exists by looking up its name:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">Name</span><span class="o">=</span><span class="s1">'PMP'</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Find the tubing in Well_1:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">component</span><span class="o">=</span><span class="n">ModelComponents</span><span class="o">.</span><span class="n">TUBING</span><span class="p">,</span> <span class="n">Well</span><span class="o">=</span><span class="s1">'Well_1'</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The tubing can also be referenced by its context:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">context</span><span class="o">=</span><span class="s2">"Well_1:Tubing_1"</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Find the context for all the completions on all the wells:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">Well</span><span class="o">=</span><span class="n">ALL</span><span class="p">,</span> <span class="n">component</span><span class="o">=</span><span class="n">ModelComponents</span><span class="o">.</span><span class="n">COMPLETION</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Large models can be reduced into smaller models through a filtered model
+which contains just those items in the context. The filtered model has all
+the same methods available as the full model. For example, selecting a well
+to perform actions on:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">wellmodel</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">Well</span><span class="o">=</span><span class="s2">"Well_1"</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">wellmodel</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">component</span><span class="o">=</span><span class="n">ModelComponents</span><span class="o">.</span><span class="n">COMPLETION</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="read-and-write-parameters">
+<h2>Read and Write Parameters<a class="headerlink" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html#read-and-write-parameters" title="Permalink to this heading">¶</a></h2>
+<p>The parameters for the model components are accessed through the get_value()
+and set_value() methods to read and write values respectively. There are
+also get_values() and set_values() methods to read and write many
+parameter components at the same time.</p>
+<p>Get the bean size of a choke:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sixgill.definitions</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">beansize</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="n">Name</span> <span class="o">=</span> <span class="s1">'Choke'</span><span class="p">,</span> <span class="n">parameter</span> <span class="o">=</span> <span class="n">Parameters</span><span class="o">.</span><span class="n">Choke</span><span class="o">.</span><span class="n">BEANSIZE</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In this case the context for the choke is the same as its name, so alternatively:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="s1">'Choke'</span><span class="p">,</span> <span class="n">Parameters</span><span class="o">.</span><span class="n">Choke</span><span class="o">.</span><span class="n">BEANSIZE</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The Parameters static class defines the parameters as strings. The following style can
+be used but it is not recommended:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="s1">'Well_1:VertComp'</span><span class="p">,</span> <span class="s1">'GeometryProfileType'</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Set the new bean size for the choke:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">set_value</span><span class="p">(</span><span class="n">Name</span> <span class="o">=</span> <span class="s1">'Choke'</span><span class="p">,</span> <span class="n">parameter</span> <span class="o">=</span> <span class="n">Parameters</span><span class="o">.</span><span class="n">Choke</span><span class="o">.</span><span class="n">BEANSIZE</span><span class="p">,</span><span class="n">value</span> <span class="o">=</span> <span class="mi">12</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Or simply, by using the context and argument ordering:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">set_value</span><span class="p">(</span><span class="s1">'Choke'</span><span class="p">,</span> <span class="n">Parameters</span><span class="o">.</span><span class="n">Choke</span><span class="o">.</span><span class="n">BEANSIZE</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Parameters can be referenced from the top level context, so long as they are unique. To
+set a new reservoir pressure on Well_1 with only one completion:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">set_value</span><span class="p">(</span>
+<span class="go">    Well='Well_1',</span>
+<span class="go">    parameter=Parameters.Completion.RESERVOIRPRESSURE,</span>
+<span class="go">    value='3210')</span>
+</pre></div>
+</div>
+<p>Which is the equivalent to:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">set_value</span><span class="p">(</span><span class="s1">'Well_1:VertComp'</span><span class="p">,</span> <span class="n">Parameters</span><span class="o">.</span><span class="n">Completion</span><span class="o">.</span><span class="n">RESERVOIRPRESSURE</span><span class="p">,</span> <span class="s1">'3210'</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>To retrieve multiple parameters from multiple components, the get_values()
+method is used. For example to get specific parameters for the choke:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">get_values</span><span class="p">(</span>
+<span class="go">    Name='Choke',</span>
+<span class="go">    parameters=[Parameters.Choke.BEANSIZE,</span>
+<span class="go">    Parameters.Choke.CRITICALPRESSURERATIO])</span>
+</pre></div>
+</div>
+<p>This returns a dictionary of the components, each having a dictionary of the
+parameters. To retrieve the parameters from all the chokes:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">get_values</span><span class="p">(</span>
+<span class="go">    Choke=ALL,</span>
+<span class="go">    parameters=[Parameters.Choke.BEANSIZE,</span>
+<span class="go">    Parameters.Choke.CRITICALPRESSURERATIO])</span>
+</pre></div>
+</div>
+<p>Passing in an empty parameter list or not passing in a list returns all the
+parameters for the context. To get all the parameters for all the compressors
+in the model:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">params</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">get_values</span><span class="p">(</span><span class="n">Compressor</span><span class="o">=</span><span class="n">ALL</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>To update the compressors with new parameters, pass in a dictionary of the
+compressor parameters:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">updated_params</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'CentComp'</span><span class="p">:</span> <span class="p">{</span>
+<span class="go">    Parameters.Compressor.HONOURSTONEWALLLIMIT: True,</span>
+<span class="go">    Parameters.Compressor.ROUTE: CompressorThermodynamics.ADIABATIC,</span>
+<span class="go">    Parameters.Compressor.EFFICIENCY: 100.0,</span>
+<span class="go">    Parameters.Compressor.ISACTIVE: True,</span>
+<span class="go">    Parameters.Compressor.PRESSUREDIFFERENTIAL: 2400.0}}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">set_values</span><span class="p">(</span><span class="n">updated_params</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The set_value() method sets the value for a single component and will throw
+an error if there is more than one component in the context. To set the same
+parameter value for all the items in the context, use the set_all_value()
+method:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">set_all_value</span><span class="p">(</span>
+<span class="go">    Choke=ALL,</span>
+<span class="go">    parameter=Parameters.Choke.BEANSIZE,</span>
+<span class="go">    value=2)</span>
+</pre></div>
+</div>
+</section>
+<section id="read-and-write-data-tables">
+<h2>Read and Write Data Tables<a class="headerlink" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html#read-and-write-data-tables" title="Permalink to this heading">¶</a></h2>
+<p>Parameters such as well trajectories, flowline geometries, and geothermal surveys
+are handled as arrays. The data is passed to and from PIPESIM as pandas DataFrames
+so that it can be easily manipulated.</p>
+<p>To read a flowline geometry using its context:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">get_geometry</span><span class="p">(</span><span class="n">context</span><span class="o">=</span><span class="s2">"F_10"</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Or by passing the name as a context:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">get_geometry</span><span class="p">(</span><span class="n">Name</span><span class="o">=</span><span class="s2">"F_10"</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The well trajectory is handled similarly as:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">get_trajectory</span><span class="p">(</span><span class="n">Name</span><span class="o">=</span><span class="s2">"GI_Well"</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>For a geothermal survey:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">get_geothermal_profile</span><span class="p">(</span><span class="n">Name</span><span class="o">=</span><span class="s2">"F_10"</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>There are corresponding methods for setting the data tables. The methods take
+the context and the DataFrame with the tabulated data. The method to set a
+flowline geometry is:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">set_geometry</span><span class="p">(</span><span class="n">context</span><span class="o">=</span><span class="s2">"F_20"</span><span class="p">,</span> <span class="n">dataframe</span><span class="o">=</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Where df is the pandas DataFrame containing the tabulated flowline profile data.
+The DataFrame must be in the same format that the corresponding get() function uses, must have
+the same column headings, and must be indexed from 0.</p>
+<p>For getting a pressure/flowrate curve on a source:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">get_pq_curve</span><span class="p">(</span><span class="n">Source</span><span class="o">=</span><span class="s2">"SRC1"</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="add-and-delete">
+<h2>Add and Delete<a class="headerlink" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html#add-and-delete" title="Permalink to this heading">¶</a></h2>
+<p>Add a new source to the model:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">component</span><span class="o">=</span><span class="n">ModelComponents</span><span class="o">.</span><span class="n">SOURCE</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">'Src1'</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The parameters for the model component can be passed as an argument:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span>
+<span class="go">    ModelComponents.CHOKE,</span>
+<span class="go">    'CK1', context="Well 2",</span>
+<span class="go">    parameters=</span>
+<span class="go">    {</span>
+<span class="go">        Parameters.Choke.TOPMEASUREDDEPTH:500,</span>
+<span class="go">        Parameters.Choke.BEANSIZE:2,</span>
+<span class="go">        Parameters.Choke.SUBCRITICALCORRELATION:Constants.SubCriticalFlowCorrelation.ASHFORD</span>
+<span class="go">    })</span>
+</pre></div>
+</div>
+<p>For downhole equipment, pass in the context and aspects such as measured depth:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span>
+<span class="go">    component=ModelComponents.ESP,</span>
+<span class="go">    name="ESP1",</span>
+<span class="go">    context="Well 2",</span>
+<span class="go">    parameters=</span>
+<span class="go">    {</span>
+<span class="go">        Parameters.ESP.TOPMEASUREDDEPTH:1500,</span>
+<span class="go">        Parameters.ESP.OPERATINGFREQUENCY:60,</span>
+<span class="go">        Parameters.ESP.MANUFACTURER:"ALNAS",</span>
+<span class="go">        Parameters.ESP.MODEL:"ANA580",</span>
+<span class="go">        Parameters.ESP.NUMBERSTAGES:100,</span>
+<span class="go">        Parameters.ESP.HEADFACTOR:1,</span>
+<span class="go">        Parameters.ESP.POWERFACTOR:0.95,</span>
+<span class="go">        Parameters.ESP.USEVISCOSITYCORRECTION:True</span>
+<span class="go">    })</span>
+</pre></div>
+</div>
+<p>Delete a model component:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">Name</span><span class="o">=</span><span class="s1">'Src1'</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="copy-convert-and-rename">
+<h2>Copy, Convert, and Rename<a class="headerlink" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html#copy-convert-and-rename" title="Permalink to this heading">¶</a></h2>
+<p>Copy a well and include all the associated equipment:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">context</span><span class="o">=</span><span class="s1">'Well_1'</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">'Well_2'</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Convert a junction into a well:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span>
+<span class="go">    context="Manifold",</span>
+<span class="go">    to_component=ModelComponents.WELL)</span>
+</pre></div>
+</div>
+<p>Rename a component by setting the Name parameter:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">set_value</span><span class="p">(</span>
+<span class="go">    context="Src1",</span>
+<span class="go">    parameter=Parameters.Source.NAME,</span>
+<span class="go">    'SOURCE_1')</span>
+</pre></div>
+</div>
+</section>
+<section id="connect-and-disconnect">
+<h2>Connect and Disconnect<a class="headerlink" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html#connect-and-disconnect" title="Permalink to this heading">¶</a></h2>
+<p>PIPESIM uses ports to reference the inlet and outlet to components. To connect,
+specify the source (from) components, the destination (to) components, and
+the port to be connected where applicable.</p>
+<p>To connect a well ‘Well_1’ to a flowline ‘FL-1’:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">'Well_1'</span><span class="p">,</span> <span class="s1">'FL-1'</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Separators have two or three outlet ports hence outlet connections from a
+separator need to explicitly state which is used:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span>
+<span class="go">    source='MBD101',</span>
+<span class="go">    destination='FL-PMP-1',</span>
+<span class="go">    source_port=Connection.Separator.TOP)</span>
+</pre></div>
+</div>
+<p>Disconnecting ports is done in the same way:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">disconnect</span><span class="p">(</span><span class="n">source</span><span class="o">=</span><span class="s1">'MDB101'</span><span class="p">,</span> <span class="n">destination</span><span class="o">=</span><span class="s1">'FL-PMP-1'</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The model connections for a context are provided as a dictionary.  This can
+be converted into a pandas DataFrame for convenient reviewing. Omitting the
+context will list all the connections in the model:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">connections</span><span class="p">(</span><span class="n">context</span><span class="o">=</span><span class="s1">'MBD-101'</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Or to see it as a nicely formatted list</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">connections</span><span class="p">(</span><span class="n">context</span><span class="o">=</span><span class="s1">'MBD-101'</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>The get_connections() method provides a list of the connections for each
+item in the context. This method is easier to code in what is connected
+to a model component</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mbd101_connections</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">get_connections</span><span class="p">(</span><span class="n">context</span><span class="o">=</span><span class="s2">"MBD-101"</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mbd101_connections</span><span class="p">[</span><span class="n">Connection</span><span class="o">.</span><span class="n">SOURCE</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mdb101_connections</span><span class="p">[</span><span class="n">Connection</span><span class="o">.</span><span class="n">Separator</span><span class="o">.</span><span class="n">TOP</span><span class="p">]</span>
+</pre></div>
+</div>
+</section>
+<section id="manipulate-fluids">
+<h2>Manipulate Fluids<a class="headerlink" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html#manipulate-fluids" title="Permalink to this heading">¶</a></h2>
+<p>Black oil and compositional fluids are treated as any other model component.
+To select fluid type and compositional fluid details use a fluid method.</p>
+<p>Create a black oil fluid:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">ModelComponents</span><span class="o">.</span><span class="n">BLACKOILFLUID</span><span class="p">,</span> <span class="s2">"BK111"</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Set the properties of the black oil fluid using, the set_value() method, for example:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">set_value</span><span class="p">(</span>
+<span class="go">    BlackOilFluid="BK111",</span>
+<span class="go">    parameter=Parameters.BlackOilFluid.GOR,</span>
+<span class="go">    value=200)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">set_value</span><span class="p">(</span>
+<span class="go">    BlackOilFluid="BK111",</span>
+<span class="go">    parameter=Parameters.BlackOilFluid.WATERCUT,</span>
+<span class="go">    value=5)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">set_value</span><span class="p">(</span>
+<span class="go">    BlackOilFluid="BK111",</span>
+<span class="go">    parameter=Parameters.BlackOilFluid.GASSPECIFICGRAVITY,</span>
+<span class="go">    value=0.7)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">set_value</span><span class="p">(</span>
+<span class="go">    BlackOilFluid="BK111",</span>
+<span class="go">    parameter=Parameters.BlackOilFluid.WATERSPECIFICGRAVITY,</span>
+<span class="go">    value=1.05)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">set_value</span><span class="p">(</span>
+<span class="go">    BlackOilFluid="BK111",</span>
+<span class="go">    parameter=Parameters.BlackOilFluid.API,</span>
+<span class="go">    value=21)</span>
+</pre></div>
+</div>
+<p>Set calibration data for black oil fluid using, the set_values() method, for example:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">single_point_calibration</span> <span class="o">=</span> <span class="n">Parameters</span><span class="o">.</span><span class="n">BlackOilFluid</span><span class="o">.</span><span class="n">SinglePointCalibration</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">set_values</span><span class="p">(</span>
+<span class="go">    {"BK111": {</span>
+<span class="go">    single_point_calibration.SOLUTIONGAS:</span>
+<span class="go">    Constants.BlackOilCalibrationSolutionGas.VASQUEZANDBEGGS,</span>
+<span class="go">    single_point_calibration.BUBBLEPOINTSATGAS_PRESSURE: 2424,</span>
+<span class="go">    single_point_calibration.BUBBLEPOINTSATGAS_TEMPERATURE: 250,</span>
+<span class="go">    single_point_calibration.BUBBLEPOINTSATGAS_VALUE: 202.63</span>
+<span class="go">    }})</span>
+</pre></div>
+</div>
+<p>Set the thermal data for black oil fluid:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">set_value</span><span class="p">(</span>
+<span class="go">    BlackOilFluid="BK111",</span>
+<span class="go">    parameter=Parameters.BlackOilFluid.ThermalData.GASHEATCAPACITY,</span>
+<span class="go">    value=0.50)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">set_value</span><span class="p">(</span>
+<span class="go">    BlackOilFluid="BK111",</span>
+<span class="go">    parameter=Parameters.BlackOilFluid.ThermalData.OILHEATCAPACITY,</span>
+<span class="go">    value=0.40)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">set_value</span><span class="p">(</span>
+<span class="go">    BlackOilFluid="BK111",</span>
+<span class="go">    parameter=Parameters.BlackOilFluid.ThermalData.WATERHEATCAPACITY,</span>
+<span class="go">    value=1.01)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">set_value</span><span class="p">(</span>
+<span class="go">    BlackOilFluid="BK111",</span>
+<span class="go">    parameter=Parameters.BlackOilFluid.ThermalData.ENTHALPYCALCMETHOD,</span>
+<span class="go">    value=EnthalpyCalcMethod.METHOD2009)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">set_value</span><span class="p">(</span>
+<span class="go">    BlackOilFluid="BK111",</span>
+<span class="go">    parameter=Parameters.BlackOilFluid.ThermalData.LATENTHEATOFVAPORIZATION,</span>
+<span class="go">    value=141)</span>
+</pre></div>
+</div>
+<p>Get the parameterization of the black oil fluid:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">get_values</span><span class="p">(</span><span class="n">BlackOilFluid</span><span class="o">=</span><span class="s2">"BK111"</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Select using compositional fluid rather than black oil:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">fluids</span><span class="o">.</span><span class="n">fluid_type</span> <span class="o">=</span> <span class="n">FluidType</span><span class="o">.</span><span class="n">COMPOSITIONAL</span>
+</pre></div>
+</div>
+<p>Set the compositional fluid options:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">eos</span> <span class="o">=</span> <span class="n">Constants</span><span class="o">.</span><span class="n">EquationOfState</span><span class="o">.</span><span class="n">Multiflash</span><span class="o">.</span><span class="n">CUBICPLUSASSOCIATION</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">fluids</span><span class="o">.</span><span class="n">compositional</span><span class="o">.</span><span class="n">pvt_package</span> <span class="o">=</span> <span class="n">Constants</span><span class="o">.</span><span class="n">PVTPackage</span><span class="o">.</span><span class="n">MULTIFLASH</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">fluids</span><span class="o">.</span><span class="n">compositional</span><span class="o">.</span><span class="n">equation_of_state</span> <span class="o">=</span> <span class="n">eos</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">fluids</span><span class="o">.</span><span class="n">compositional</span><span class="o">.</span><span class="n">salinity_model</span> <span class="o">=</span> <span class="n">Constants</span><span class="o">.</span><span class="n">SalinityModel</span><span class="o">.</span><span class="n">IONANALYSIS</span>
+</pre></div>
+</div>
+<p>Create a custom pseudocomponent:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">c7plus_component_params</span> <span class="o">=</span> <span class="p">{</span>
+<span class="go">    Parameters.FluidComponent.HYDROCARBONFORM:Constants.FluidComponentType.HYDROCARBON,</span>
+<span class="go">    Parameters.FluidComponent.MOLECULARWEIGHT:234,</span>
+<span class="go">    Parameters.FluidComponent.TBOIL:250,</span>
+<span class="go">    }</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">fluids</span><span class="o">.</span><span class="n">compositional</span><span class="o">.</span><span class="n">add_pseudocomponent</span><span class="p">(</span>
+<span class="go">    "C7Plus",</span>
+<span class="go">    parameters=c7plus_component_params)</span>
+</pre></div>
+</div>
+<p>Select compositional fluid components:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">selected_components</span> <span class="o">=</span> <span class="p">[</span>
+<span class="go">    Constants.MultiflashComponent.METHANE,</span>
+<span class="go">    Constants.MultiflashComponent.ETHANE,</span>
+<span class="go">    Constants.MultiflashComponent.HEXANE,</span>
+<span class="go">    Constants.MultiflashComponent.ETHANOL,</span>
+<span class="go">    Constants.MultiflashComponent.PROPANE,</span>
+<span class="go">    Constants.MultiflashComponent.WATER,</span>
+<span class="go">    "C7Plus",</span>
+<span class="go">    ]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">fluids</span><span class="o">.</span><span class="n">compositional</span><span class="o">.</span><span class="n">select_components</span><span class="p">(</span><span class="n">selected_components</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Create a compositional fluid with with salt component:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fluid_parameters</span> <span class="o">=</span> <span class="p">{</span>
+<span class="go">    Parameters.CompositionalFluid.LIQUIDVISCOSITYCALC:</span>
+<span class="go">        Constants.EmulsionViscosityMethod.CONTINUOUSPHASE,</span>
+<span class="go">    Parameters.CompositionalFluid.USERWATERCUTCUTOFF:40,</span>
+<span class="go">    Parameters.CompositionalFluid.IONSODIUM:1000,</span>
+<span class="go">    Parameters.CompositionalFluid.IONCALCIUM:5000,</span>
+<span class="go">    Parameters.CompositionalFluid.IONMAGNESIUM:3000,</span>
+<span class="go">    Parameters.CompositionalFluid.IONPOTASSIUM:4012,</span>
+<span class="go">    Parameters.CompositionalFluid.IONSTRONTIUM:5000,</span>
+<span class="go">    Parameters.CompositionalFluid.IONBARIUM:6000,</span>
+<span class="go">    Parameters.CompositionalFluid.IONIRON:17000,</span>
+<span class="go">    Parameters.CompositionalFluid.IONCHLORIDE:1000,</span>
+<span class="go">    Parameters.CompositionalFluid.IONSULPHATE:1235,</span>
+<span class="go">    Parameters.CompositionalFluid.IONBICARBONATE:11122,</span>
+<span class="go">    Parameters.CompositionalFluid.IONBROMIDE:544,</span>
+<span class="go">    Parameters.CompositionalFluid.IONBARIUM:5555,</span>
+<span class="go">    Parameters.CompositionalFluid.SALTWATERDENSITYTYPE:</span>
+<span class="go">        Constants.SaltWaterDensity.DENSITY,</span>
+<span class="go">    Parameters.CompositionalFluid.SALTWATERDENSITY:72,</span>
+<span class="go">    }</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">ModelComponents</span><span class="o">.</span><span class="n">COMPOSITIONALFLUID</span><span class="p">,</span> <span class="s2">"Comp1"</span><span class="p">,</span> <span class="n">parameters</span><span class="o">=</span><span class="n">fluid_parameters</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The compositional fluid is read through the method on the fluids:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">fluids</span><span class="o">.</span><span class="n">compositional</span><span class="o">.</span><span class="n">get_composition</span><span class="p">(</span><span class="s2">"Comp1"</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>And the corresponding method for setting the composition:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">fluids</span><span class="o">.</span><span class="n">compositional</span><span class="o">.</span><span class="n">set_composition</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Assign a black oil fluid to a well:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">set_value</span><span class="p">(</span>
+<span class="go">    Well = "Well 2",</span>
+<span class="go">    parameter=Parameters.Well.ASSOCIATEDBLACKOILFLUID,</span>
+<span class="go">    value="BK111")</span>
+</pre></div>
+</div>
+<p>Assign a compositional fluid to a well:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">set_value</span><span class="p">(</span>
+<span class="go">    Well = "Well 2",</span>
+<span class="go">    parameter=Parameters.Well.ASSOCIATEDCOMPOSITIONALFLUID,</span>
+<span class="go">    value="COMP1")</span>
+</pre></div>
+</div>
+</section>
+<section id="import-and-export-wells">
+<h2>Import and Export Wells<a class="headerlink" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html#import-and-export-wells" title="Permalink to this heading">¶</a></h2>
+<p>You can import and export Wells to/from individual PIPESIM models. To export
+a well to a PIPESIM model:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">export_well</span><span class="p">(</span><span class="n">context</span><span class="o">=</span><span class="s2">"Well_1"</span><span class="p">,</span>
+<span class="go">    folder="C:/temp/myproject/wells")</span>
+</pre></div>
+</div>
+<p>To export all the wells, leave out the context:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">export_well</span><span class="p">(</span><span class="n">folder</span><span class="o">=</span><span class="s2">"C:/temp/myproject/wells"</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>If the folder is not provided then it will export to the same folder as the
+currently open PIPESIM model.</p>
+<p>Import a PIPESIM well model into the currently open model:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">import_well</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s2">"C:/temp/myproject/Well.pips"</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">"Well_1"</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>To use the fluid from the imported model:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">import_well</span><span class="p">(</span>
+<span class="go">    filename="C:/temp/myproject/Well.pips",</span>
+<span class="go">    name="Well_1",</span>
+<span class="go">    fluid_override=False)</span>
+</pre></div>
+</div>
+<p>To overwrite the existing “Well_1” in the current model with the imported well:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">import_well</span><span class="p">(</span>
+<span class="go">    filename="C:/temp/myproject/Well.pips",</span>
+<span class="go">    name="Well_1",</span>
+<span class="go">    overwrite_existing=True)</span>
+</pre></div>
+</div>
+</section>
+<section id="catalog-and-gis">
+<h2>Catalog and GIS<a class="headerlink" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html#catalog-and-gis" title="Permalink to this heading">¶</a></h2>
+<p>Get the elevation for a coordinate (latitude, longitude):</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">get_elevation</span><span class="p">(</span><span class="n">lat</span><span class="o">=</span><span class="mf">44.4532</span><span class="p">,</span> <span class="n">long</span><span class="o">=</span><span class="mf">76.16231</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Get elevations for multiple coordinates:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">get_elevations</span><span class="p">(</span>
+<span class="go">            [{Parameters.Location.LATITUDE:44.4532,Parameters.Location.LONGITUDE:76.16231},</span>
+<span class="go">            {Parameters.Location.LATITUDE:45.5532,Parameters.Location.LONGITUDE: 78.6678}])</span>
+</pre></div>
+</div>
+<p>Reading entries from the catalog. Parameters required for the look-up such as
+Manufacturer, series, etc. must have been set on the component first:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">read_catalog</span><span class="p">(</span><span class="s2">"PCP"</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="simulation-settings">
+<h2>Simulation Settings<a class="headerlink" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html#simulation-settings" title="Permalink to this heading">¶</a></h2>
+<p>You can operate on the simulation settings through both a dictionary and
+individual properties.</p>
+<p>Get the current simulation settings as a dictionary:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">sim_settings</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Get the ambient temperature:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">sim_settings</span><span class="o">.</span><span class="n">ambient_temperature</span>
+</pre></div>
+</div>
+<p>Set the ambient temperature:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">sim_settings</span><span class="o">.</span><span class="n">ambient_temperature</span> <span class="o">=</span> <span class="mi">70</span>
+</pre></div>
+</div>
+<p>Alternatively, using the dictionary syntax:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">sim_settings</span><span class="p">[</span><span class="n">Parameters</span><span class="o">.</span><span class="n">SimulationSetting</span><span class="o">.</span><span class="n">AMBIENTTEMPERATURE</span><span class="p">]</span> <span class="o">=</span> <span class="mi">70</span>
+</pre></div>
+</div>
+<p>The global flow correlations are provided as a dictionary by:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">sim_settings</span><span class="o">.</span><span class="n">global_flow_correlation</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>And to set the global flow correlations, pass back in a dictionary:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">multiphase</span> <span class="o">=</span> <span class="n">Parameters</span><span class="o">.</span><span class="n">FlowCorrelation</span><span class="o">.</span><span class="n">Multiphase</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">sim_settings</span><span class="o">.</span><span class="n">global_flow_correlation</span><span class="p">({</span>
+<span class="go">    multiphase.Vertical.CORRELATION:</span>
+<span class="go">        Constants.MultiphaseFlowCorrelation.BakerJardine.BEGGSBRILL,</span>
+<span class="go">    multiphase.Horizontal.CORRELATION:</span>
+<span class="go">        Constants.MultiphaseFlowCorrelation.BakerJardine.BEGGSBRILL</span>
+<span class="go">    })</span>
+</pre></div>
+</div>
+<p>To use the local flow correlations:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">sim_settings</span><span class="o">.</span><span class="n">use_global_flow_correlation</span> <span class="o">=</span> <span class="kc">False</span>
+</pre></div>
+</div>
+<p>The local flowline correlations are accessed through context based get/set
+methods.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">sim_settings</span><span class="o">.</span><span class="n">get_flow_correlations</span><span class="p">(</span><span class="n">Flowline</span><span class="o">=</span><span class="n">ALL</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>If the context is left empty then it returns all the flowline and
+well trajectories that be specified:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">sim_settings</span><span class="o">.</span><span class="n">get_flow_correlations</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>To set the flow correlations for a flowline, pass in the dictionary of
+parameters for the flowlines or wells to be set:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">multiphase</span> <span class="o">=</span> <span class="n">Parameters</span><span class="o">.</span><span class="n">FlowCorrelation</span><span class="o">.</span><span class="n">Multiphase</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">sim_settings</span><span class="o">.</span><span class="n">set_flow_correlations</span><span class="p">({</span>
+<span class="go">    "FL_10": {</span>
+<span class="go">        Parameters.FlowCorrelation.OVERRIDEGLOBAL: True,</span>
+<span class="go">        multiphase.Vertical.CORRELATION:</span>
+<span class="go">            Constants.MultiphaseFlowCorrelation.BakerJardine.BEGGSBRILL,</span>
+<span class="go">        multiphase.Horizontal.CORRELATION:</span>
+<span class="go">            Constants.MultiphaseFlowCorrelation.BakerJardine.BEGGSBRILL</span>
+<span class="go">    }})</span>
+</pre></div>
+</div>
+<p>The heat transfer options use the same methodology. To get the global heat
+transfer options:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">sim_settings</span><span class="o">.</span><span class="n">global_heat_transfer_option</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>To set the heat transfer options:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">sim_settings</span><span class="o">.</span><span class="n">global_heat_transfer_option</span><span class="p">({</span>
+<span class="go">Parameters.HeatTransferOption.PIPEBURIALMETHOD: Constants.PipeBurialMethod.METHOD2009})</span>
+</pre></div>
+</div>
+<p>To get and set the local heat transfer options:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">sim_settings</span><span class="o">.</span><span class="n">get_heat_transfer_options</span><span class="p">(</span><span class="n">Flowline</span><span class="o">=</span><span class="n">ALL</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">sim_settings</span><span class="o">.</span><span class="n">set_heat_transfer_options</span><span class="p">({</span>
+<span class="go">    "FL_10": {</span>
+<span class="go">    Parameters.HeatTransferOption.OVERRIDEGLOBAL: True,</span>
+<span class="go">    Parameters.HeatTransferOption.PIPEBURIALMETHOD: Constants.PipeBurialMethod.METHOD2009</span>
+<span class="go">    }})</span>
+</pre></div>
+</div>
+<p>The list of available simulation setting properties is provided in the
+Quick Reference section below.</p>
+</section>
+<section id="simulations">
+<h2>Simulations<a class="headerlink" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html#simulations" title="Permalink to this heading">¶</a></h2>
+<p>Simulations are performed through the tasks class. Each task has the same
+core methods available, with additional methods depending on the task being
+performed.</p>
+<p>Get the current boundary conditions for a network simulation:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">tasks</span><span class="o">.</span><span class="n">networksimulation</span><span class="o">.</span><span class="n">get_conditions</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>For a specific study:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">tasks</span><span class="o">.</span><span class="n">networksimulation</span><span class="o">.</span><span class="n">get_conditions</span><span class="p">(</span><span class="n">study</span><span class="o">=</span><span class="s2">"Late Field Life"</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Update the boundary conditions for the default network simulation study:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">boundaries</span> <span class="o">=</span>
+<span class="go">    {"Well:VertComp":</span>
+<span class="go">        {</span>
+<span class="go">            Parameters.Boundary.PRESSURE:NAN,</span>
+<span class="go">            Parameters.Boundary.TEMPERATURE:150,</span>
+<span class="go">            Parameters.Boundary.FLOWRATETYPE:Constants.FlowRateType.LIQUIDFLOWRATE,</span>
+<span class="go">            Parameters.Boundary.LIQUIDFLOWRATE:200</span>
+<span class="go">        }</span>
+<span class="go">    }</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">tasks</span><span class="o">.</span><span class="n">networksimulation</span><span class="o">.</span><span class="n">set_conditions</span><span class="p">(</span><span class="n">boundaries</span> <span class="o">=</span> <span class="n">boundaries</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>To reset the boundary conditions to those of the model for the default study:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">tasks</span><span class="o">.</span><span class="n">networksimulation</span><span class="o">.</span><span class="n">reset_conditions</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>The simulation performance is directly affected by the number of specified system and profile variables in a simulation task.
+If omitted, then all the possible system and profile variables are returned, which will significantly jeopardize the simulation performance.
+To produce all results available in a UI simulation run, the predefined output variables available in the UI can be selected.
+These predefined output variables include large lists of variables. For the best simulation performance, only the required output variables are specified.</p>
+<p>To run the network simulation study:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">system_variables</span> <span class="o">=</span> <span class="p">[</span>
+<span class="go">    SystemVariables.PRESSURE,</span>
+<span class="go">    SystemVariables.TEMPERATURE,</span>
+<span class="go">    SystemVariables.VOLUME_FLOWRATE_LIQUID_STOCKTANK,</span>
+<span class="go">    SystemVariables.VOLUME_FLOWRATE_OIL_STOCKTANK,</span>
+<span class="go">    SystemVariables.VOLUME_FLOWRATE_WATER_STOCKTANK,</span>
+<span class="go">    SystemVariables.VOLUME_FLOWRATE_GAS_STOCKTANK,</span>
+<span class="go">    SystemVariables.BOTTOM_HOLE_PRESSURE,</span>
+<span class="go">    SystemVariables.OUTLET_GLR_STOCKTANK,</span>
+<span class="go">    SystemVariables.OUTLET_WATER_CUT_STOCKTANK,</span>
+<span class="go">    ]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">profile_variables</span> <span class="o">=</span> <span class="p">[</span>
+<span class="go">    ProfileVariables.TEMPERATURE,</span>
+<span class="go">    ProfileVariables.ELEVATION,</span>
+<span class="go">    ProfileVariables.TOTAL_DISTANCE,</span>
+<span class="go">    ]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">results</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">tasks</span><span class="o">.</span><span class="n">networksimulation</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
+<span class="go">    system_variables=system_variables,</span>
+<span class="go">    profile_variables=profile_variables)</span>
+</pre></div>
+</div>
+<p>The study conditions can be passed into the run_simulation() method. This
+allows simulations to be queued up, each with their own study conditions:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">results</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">tasks</span><span class="o">.</span><span class="n">networksimulation</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
+<span class="go">    boundaries=boundaries,</span>
+<span class="go">    system_variables=system_variables, profile_variables=profile_variables)</span>
+</pre></div>
+</div>
+<p>Predefined results variable lists are available as available in the PIPESIM UI:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">results</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">tasks</span><span class="o">.</span><span class="n">networksimulation</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
+<span class="go">    boundaries=boundaries,</span>
+<span class="go">    system_variables=OutputVariables.System.FLOW_ASSURANCE,</span>
+<span class="go">    profile_variables=OutputVariables.Profile.FLOW_ASSURANCE)</span>
+</pre></div>
+</div>
+<p>The simulation results is an object with three properties: system, node and profile. For
+network simulations, the node and system results are dictionaries of each node
+or system point respectively while the profile is a dictionary of each branch.
+In a PT Profile simulation the system points is also a dictionary of the sensitivities.</p>
+<p>The node results for a network simulation as a dataframe:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">results</span><span class="o">.</span><span class="n">node</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The system results for a network simulation as a dataframe</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">results</span><span class="o">.</span><span class="n">system</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The profile results for flowline FL-45 in a network simulation as a DataFrame:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">results</span><span class="o">.</span><span class="n">profile</span><span class="p">[</span><span class="s2">"FL-45"</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>The run() method executes concurrently and the results are returned when it finishes.
+To run the simulation in the background, use the start_simulation() method. This
+allows the Python script to continue executing while the simulation is running:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">simulation_id</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">tasks</span><span class="o">.</span><span class="n">networksimulation</span><span class="o">.</span><span class="n">start</span><span class="p">(</span>
+<span class="go">        profile_variables=profile_variables,</span>
+<span class="go">        system_variables=system_variables)</span>
+</pre></div>
+</div>
+<p>In this case, the status of the simulation is returned by:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">tasks</span><span class="o">.</span><span class="n">networksimulation</span><span class="o">.</span><span class="n">get_state</span><span class="p">(</span><span class="n">simulation_id</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>And when finished, the simulation message and results are retrieved:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">message</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">tasks</span><span class="o">.</span><span class="n">networksimulation</span><span class="o">.</span><span class="n">get_messages</span><span class="p">(</span><span class="n">simulation_id</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">results</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">tasks</span><span class="o">.</span><span class="n">networksimulation</span><span class="o">.</span><span class="n">get_results</span><span class="p">(</span><span class="n">simulation_id</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Note that the simulations using start() are queued by the PIPESIM engine
+and are run concurrently. The simulations are not run in parallel, only
+that the Python script can continue running while each simulation finishes.</p>
+<p>PT Profile simulations are performed in the same manner. The arguments passed
+to the study and simulation methods are accordingly different:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">parameters</span> <span class="o">=</span> <span class="p">{</span>
+<span class="go">        Parameters.PTProfileSimulation.INLETPRESSURE:2600,  #psia</span>
+<span class="go">        Parameters.PTProfileSimulation.OUTLETPRESSURE:200,  #psia</span>
+<span class="go">        Parameters.PTProfileSimulation.LIQUIDFLOWRATE:3000,  #stb/d</span>
+<span class="go">        Parameters.PTProfileSimulation.FLOWRATETYPE:Constants.FlowRateType.LIQUIDFLOWRATE,</span>
+<span class="go">        Parameters.PTProfileSimulation.CALCULATEDVARIABLE:Constants.CalculatedVariable.CUSTOM,</span>
+<span class="go">        Parameters.PTProfileSimulation.CUSTOMVARIABLE: {</span>
+<span class="go">            Parameters.PTProfileSimulation.CustomVariable.COMPONENT:"FL-1",</span>
+<span class="go">            Parameters.PTProfileSimulation.CustomVariable.VARIABLE:"InnerDiameter",</span>
+<span class="go">            Parameters.PTProfileSimulation.CustomVariable.MINVALUE:1,</span>
+<span class="go">            Parameters.PTProfileSimulation.CustomVariable.MAXVALUE:10,</span>
+<span class="go">            }</span>
+<span class="go">        }</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">results</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">tasks</span><span class="o">.</span><span class="n">ptprofilesimulation</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
+<span class="go">        producer="Well",</span>
+<span class="go">        parameters=parameters,</span>
+<span class="go">        profile_variables=profile_variables,</span>
+<span class="go">        system_variables=system_variables)</span>
+</pre></div>
+</div>
+<p>For a PT Profile sensitivity study:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">parameters</span> <span class="o">=</span> <span class="p">{</span>
+<span class="go">        Parameters.PTProfileSimulation.INLETPRESSURE:2600,  #psia</span>
+<span class="go">        Parameters.PTProfileSimulation.OUTLETPRESSURE:200,  #psia</span>
+<span class="go">        Parameters.PTProfileSimulation.CALCULATEDVARIABLE:Constants.CalculatedVariable.FLOWRATE,</span>
+<span class="go">        Parameters.PTProfileSimulation.FLOWRATETYPE:Constants.FlowRateType.LIQUIDFLOWRATE,</span>
+<span class="go">        Parameters.SingleBranchSimulation.SENSITIVITYVARIABLE: {</span>
+<span class="go">            Parameters.SingleBranchSimulation.SensitivityVariable.COMPONENT: "VertComp",</span>
+<span class="go">            Parameters.SingleBranchSimulation.SensitivityVariable.VARIABLE:</span>
+<span class="go">                Parameters.Completion.RESERVOIRPRESSURE,</span>
+<span class="go">            Parameters.SingleBranchSimulation.SensitivityVariable.VALUES: [2000, 3000, 4000]</span>
+<span class="go">            }</span>
+<span class="go">        }</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">results</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">tasks</span><span class="o">.</span><span class="n">ptprofilesimulation</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
+<span class="go">    producer="Well",</span>
+<span class="go">    parameters=parameters,</span>
+<span class="go">    system_variables=system_variables,</span>
+<span class="go">    profile_variables=profile_variables)</span>
+</pre></div>
+</div>
+<p>If Component is a OneSubsea wet gas compressor and Variable is PressureRatio
+or Speed, ApplyAll can be set to true such that the sensitivity values are
+applied to all OneSubsea wet gas compressors in that branch:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">parameters</span> <span class="o">=</span> <span class="p">{</span>
+<span class="go">        Parameters.PTProfileSimulation.INLETPRESSURE:2600,  #psia</span>
+<span class="go">        Parameters.PTProfileSimulation.OUTLETPRESSURE:200,  #psia</span>
+<span class="go">        Parameters.PTProfileSimulation.CALCULATEDVARIABLE:Constants.CalculatedVariable.FLOWRATE,</span>
+<span class="go">        Parameters.PTProfileSimulation.FLOWRATETYPE:Constants.FlowRateType.LIQUIDFLOWRATE,</span>
+<span class="go">        Parameters.SingleBranchSimulation.SENSITIVITYVARIABLE: {</span>
+<span class="go">            Parameters.SingleBranchSimulation.SensitivityVariable.COMPONENT: "WetGasCompressor",</span>
+<span class="go">            Parameters.SingleBranchSimulation.SensitivityVariable.VARIABLE:</span>
+<span class="go">                Parameters.Compressor.PRESSURERATIO,</span>
+<span class="go">            Parameters.SingleBranchSimulation.SensitivityVariable.VALUES: [1.2, 1.3, 1.4],</span>
+<span class="go">            Parameters.SingleBranchSimulation.SensitivityVariable.APPLYALL: True</span>
+<span class="go">            }</span>
+<span class="go">        }</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">results</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">tasks</span><span class="o">.</span><span class="n">ptprofilesimulation</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
+<span class="go">    producer="Well",</span>
+<span class="go">    parameters=parameters,</span>
+<span class="go">    system_variables=system_variables,</span>
+<span class="go">    profile_variables=profile_variables)</span>
+</pre></div>
+</div>
+<p>With a PT Profile simulation, the list of available components and variables
+for a producer is found from:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">tasks</span><span class="o">.</span><span class="n">ptprofilesimulation</span><span class="o">.</span><span class="n">get_sensitivity_variables</span><span class="p">(</span><span class="s2">"Well_1"</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Nodal analysis simulation is supported in a similar manner.</p>
+<p>Get current nodal analysis parameters and inlet conditions for a specified
+producer and study:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">general_conds</span><span class="p">,</span><span class="n">inlet_conds</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">tasks</span><span class="o">.</span><span class="n">nodalanalysis</span><span class="o">.</span><span class="n">get_conditions</span><span class="p">(</span>
+<span class="go">        producer="Well", study='Study1')</span>
+</pre></div>
+</div>
+<p>A nodal point can be applied to a nodal analysis simulation when getting the
+parameters of a nodal analysis study.</p>
+<p>For surface nodal point:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">na_sim</span><span class="p">,</span> <span class="n">inlet_conds</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">tasks</span><span class="o">.</span><span class="n">nodalanalysis</span><span class="o">.</span><span class="n">get_conditions</span><span class="p">(</span>
+<span class="go">        "Well 1",</span>
+<span class="go">        nodal_point_settings = {</span>
+<span class="go">        Parameters.NodalPoint.NODALTYPE: Constants.NodalPointType.SURFACE,</span>
+<span class="go">        Parameters.NodalPoint.EQUIPMENT: 'Choke',</span>
+<span class="go">        Parameters.NodalPoint.NAME: 'NA1'</span>
+<span class="go">    })</span>
+</pre></div>
+</div>
+<p>For downhole nodal point:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">na_sim</span><span class="p">,</span> <span class="n">inlet_conds</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">tasks</span><span class="o">.</span><span class="n">nodalanalysis</span><span class="o">.</span><span class="n">get_conditions</span><span class="p">(</span>
+<span class="go">        "Well 1", "Study 2",</span>
+<span class="go">        nodal_point_settings = {</span>
+<span class="go">        Parameters.NodalPoint.NODALTYPE: Constants.NodalPointType.DOWNHOLE,</span>
+<span class="go">        Parameters.NodalPoint.DEPTH: 1000,</span>
+<span class="go">        Parameters.NodalPoint.WELLSTRINGTYPE: Constants.TubingSectionType.TUBING,</span>
+<span class="go">        Parameters.NodalPoint.NAME: 'NA2'</span>
+<span class="go">    })</span>
+</pre></div>
+</div>
+<p>Update the general and inlet conditions as well as nodal point settings for
+a nodal analysis simulation:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">tasks</span><span class="o">.</span><span class="n">nodalanalysis</span><span class="o">.</span><span class="n">set_conditions</span><span class="p">(</span>
+<span class="go">        "Well 1",</span>
+<span class="go">        parameters={</span>
+<span class="go">            Parameters.NodalAnalysisSimulation.LIMITINFLOW: True,</span>
+<span class="go">            Parameters.NodalAnalysisSimulation.LIMITOUTFLOW: False,</span>
+<span class="go">            Parameters.NodalAnalysisSimulation.OUTFLOWPOINTS: 40,</span>
+<span class="go">            Parameters.NodalAnalysisSimulation.INFLOWPOINTS: 50,</span>
+<span class="go">            Parameters.NodalAnalysisSimulation.MAXFLOWRATETYPE:</span>
+<span class="go">                Constants.FlowRateType.GASFLOWRATE,</span>
+<span class="go">            Parameters.NodalAnalysisSimulation.OUTLETPRESSURE: 3000,</span>
+<span class="go">            Parameters.NodalAnalysisSimulation.MAXGASRATE: 300,</span>
+<span class="go">            Parameters.NodalAnalysisSimulation.MAXOUTFLOWPRESSURE: 400,</span>
+<span class="go">            Parameters.NodalAnalysisSimulation.BRANCHTERMINATOR: "Choke"</span>
+<span class="go">        },</span>
+<span class="go">        inlet_conditions={</span>
+<span class="go">        "Well 1:Comp1":{ Parameters.Boundary.PRESSURE:4000,</span>
+<span class="go">                         Parameters.Boundary.TEMPERATURE:200</span>
+<span class="go">                        }</span>
+<span class="go">        },</span>
+<span class="go">        nodal_point_settings={</span>
+<span class="go">            Parameters.NodalPoint.NODALTYPE: Constants.NodalPointType.DOWNHOLE,</span>
+<span class="go">            Parameters.NodalPoint.DEPTH: 1000,</span>
+<span class="go">            Parameters.NodalPoint.WELLSTRINGTYPE: Constants.TubingSectionType.TUBING,</span>
+<span class="go">            Parameters.NodalPoint.NAME: 'NA2'</span>
+<span class="go">        })</span>
+</pre></div>
+</div>
+<p>Run simulation and get results:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sim_results</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">tasks</span><span class="o">.</span><span class="n">nodalanalysis</span><span class="o">.</span><span class="n">run</span><span class="p">(</span> <span class="s2">"Well 1"</span><span class="p">,</span>
+<span class="go">    parameters={</span>
+<span class="go">        Parameters.NodalAnalysisSimulation.OUTLETPRESSURE: 3000,</span>
+<span class="go">        Parameters.NodalAnalysisSimulation.BRANCHTERMINATOR: "Choke"</span>
+<span class="go">    },</span>
+<span class="go">    nodal_point_settings = {</span>
+<span class="go">        Parameters.NodalPoint.NODALTYPE: Constants.NodalPointType.SURFACE,</span>
+<span class="go">        Parameters.NodalPoint.EQUIPMENT: 'Choke',</span>
+<span class="go">        Parameters.NodalPoint.NAME: 'NA4'</span>
+<span class="go">    },</span>
+<span class="go">    profile_variables=OutputVariables.Profile.GAS_FIELD,</span>
+<span class="go">    system_variables=OutputVariables.System.GAS_FIELD)</span>
+</pre></div>
+</div>
+<p>Note that system variables that are related to nodal analysis simulation
+are generated in results by default no matter whether they are provided in
+system_variables or not.</p>
+<p>Additional information speical to nodal analysis simulation such as
+inflow curves, outflow curves, operating points, operating envelope
+and fuild base can also be obtained from the results.</p>
+<p>Get the information of inflow curve in the first case:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">result</span><span class="o">.</span><span class="n">inflow_curves</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">case</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">curve</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">inflow_curves</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">curve_data</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">liquid_curve</span> <span class="o">=</span> <span class="n">curve</span><span class="p">[</span><span class="n">SystemVariables</span><span class="o">.</span><span class="n">NODAL_POINT_VOLUME_FLOWRATE_LIQUID_STOCKTANK</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mass_curve</span> <span class="o">=</span> <span class="n">curve</span><span class="p">[</span><span class="n">SystemVariables</span><span class="o">.</span><span class="n">NODAL_POINT_MASS_FLOWRATE_FLUID</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gas_curve</span> <span class="o">=</span> <span class="n">curve</span><span class="p">[</span><span class="n">SystemVariables</span><span class="o">.</span><span class="n">NODAL_POINT_VOLUME_FLOWRATE_GAS_STOCKTANK</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">presure_curve</span> <span class="o">=</span> <span class="n">curve</span><span class="p">[</span><span class="n">SystemVariables</span><span class="o">.</span><span class="n">NODAL_POINT_PRESSURE</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">units</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">inflow_curves</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">units</span>
+</pre></div>
+</div>
+<p>Get the operating envelope for gas phase. Note that operating envelope is
+generated when there is only one case in simulaiton results.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">max_drawdown</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">operating_envelope</span><span class="o">.</span><span class="n">max_drawdown</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">max_drawdown</span><span class="p">[</span><span class="n">Parameters</span><span class="o">.</span><span class="n">NodalOperatingEnvelopePlot</span><span class="o">.</span><span class="n">GASFLOWRATE</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">max_drawdown</span><span class="p">[</span><span class="n">Parameters</span><span class="o">.</span><span class="n">NodalOperatingEnvelopePlot</span><span class="o">.</span><span class="n">GASFLOWRATEPRESSURE</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">res_pres</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">operating_envelope</span><span class="o">.</span><span class="n">reservoir_pressure</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">res_pres</span><span class="p">[</span><span class="n">Parameters</span><span class="o">.</span><span class="n">NodalOperatingEnvelopePlot</span><span class="o">.</span><span class="n">GASFLOWRATE</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">res_pres</span><span class="p">[</span><span class="n">Parameters</span><span class="o">.</span><span class="n">NodalOperatingEnvelopePlot</span><span class="o">.</span><span class="n">GASFLOWRATEPRESSURE</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ero_velocity</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">operating_envelope</span><span class="o">.</span><span class="n">erosional_velocity</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ero_velocity</span><span class="p">[</span><span class="n">Parameters</span><span class="o">.</span><span class="n">NodalOperatingEnvelopePlot</span><span class="o">.</span><span class="n">GASFLOWRATE</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ero_velocity</span><span class="p">[</span><span class="n">Parameters</span><span class="o">.</span><span class="n">NodalOperatingEnvelopePlot</span><span class="o">.</span><span class="n">GASFLOWRATEPRESSURE</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">aofp</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">operating_envelope</span><span class="o">.</span><span class="n">aofp</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">aofp</span><span class="p">[</span><span class="n">Parameters</span><span class="o">.</span><span class="n">NodalOperatingEnvelopePlot</span><span class="o">.</span><span class="n">GASFLOWRATE</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">aofp</span><span class="p">[</span><span class="n">Parameters</span><span class="o">.</span><span class="n">NodalOperatingEnvelopePlot</span><span class="o">.</span><span class="n">GASFLOWRATEPRESSURE</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">inversion_point</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">operating_envelope</span><span class="o">.</span><span class="n">inversion_point</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">inversion_point</span><span class="p">[</span><span class="n">Parameters</span><span class="o">.</span><span class="n">NodalOperatingEnvelopePlot</span><span class="o">.</span><span class="n">GASFLOWRATE</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">inversion_point</span><span class="p">[</span><span class="n">Parameters</span><span class="o">.</span><span class="n">NodalOperatingEnvelopePlot</span><span class="o">.</span><span class="n">GASFLOWRATEPRESSURE</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">liquid_loading</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">operating_envelope</span><span class="o">.</span><span class="n">liquid_loading</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">liquid_loading</span><span class="p">[</span><span class="n">Parameters</span><span class="o">.</span><span class="n">NodalOperatingEnvelopePlot</span><span class="o">.</span><span class="n">GASFLOWRATE</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">liquid_loading</span><span class="p">[</span><span class="n">Parameters</span><span class="o">.</span><span class="n">NodalOperatingEnvelopePlot</span><span class="o">.</span><span class="n">GASFLOWRATEPRESSURE</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Get the operating point data for each phase and units in the first case:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">point</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">operating_points</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">point_data</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">point</span><span class="p">[</span><span class="n">SystemVariables</span><span class="o">.</span><span class="n">NODAL_POINT_VOLUME_FLOWRATE_LIQUID_STOCKTANK</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">point</span><span class="p">[</span><span class="n">SystemVariables</span><span class="o">.</span><span class="n">NODAL_POINT_VOLUME_FLOWRATE_GAS_STOCKTANK</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">point</span><span class="p">[</span><span class="n">SystemVariables</span><span class="o">.</span><span class="n">NODAL_POINT_MASS_FLOWRATE_FLUID</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">point</span><span class="p">[</span><span class="n">SystemVariables</span><span class="o">.</span><span class="n">NODAL_POINT_PRESSURE</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">units</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">operating_points</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">units</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">units</span><span class="p">[</span><span class="n">SystemVariables</span><span class="o">.</span><span class="n">NODAL_POINT_VOLUME_FLOWRATE_LIQUID_STOCKTANK</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">units</span><span class="p">[</span><span class="n">SystemVariables</span><span class="o">.</span><span class="n">NODAL_POINT_VOLUME_FLOWRATE_GAS_STOCKTANK</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">units</span><span class="p">[</span><span class="n">SystemVariables</span><span class="o">.</span><span class="n">NODAL_POINT_MASS_FLOWRATE_FLUID</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">units</span><span class="p">[</span><span class="n">SystemVariables</span><span class="o">.</span><span class="n">NODAL_POINT_PRESSURE</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Get the fluid base for nodal analysis operation:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fluid_base</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">fluid_base</span>
+</pre></div>
+</div>
+<p>The console messages, summary and state of the simulation after it has
+finished are properties on the results. This include errors and warnings
+that you would ordinarily see in the PIPESIM console.</p>
+<p>To get the final state of the simulation:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">results</span><span class="o">.</span><span class="n">state</span>
+</pre></div>
+</div>
+<p>A summary of the messages as reported in the PIPESIM UI:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">results</span><span class="o">.</span><span class="n">summary</span>
+</pre></div>
+</div>
+<p>The full console messages as reported by the PIPESIM engine:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">results</span><span class="o">.</span><span class="n">messages</span>
+</pre></div>
+</div>
+<p>Generate PIPESIM engine files in the current folder:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">tasks</span><span class="o">.</span><span class="n">networksimulation</span><span class="o">.</span><span class="n">generate_engine_files</span><span class="p">(</span><span class="n">study</span><span class="o">=</span><span class="s2">"Study 1"</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>To specify the folder for the engine files:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">tasks</span><span class="o">.</span><span class="n">ptprofilesimulation</span><span class="o">.</span><span class="n">generate_engine_files</span><span class="p">(</span>
+<span class="go">    study="Study 1",</span>
+<span class="go">    folder='c:/temp/myproject')</span>
+</pre></div>
+</div>
+<p>The method returns the list of files that has been generated.</p>
+</section>
+<section id="units-of-measurement">
+<h2>Units of Measurement<a class="headerlink" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html#units-of-measurement" title="Permalink to this heading">¶</a></h2>
+<p>Get the engineering unit and the symbol for a parameter:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">describe</span><span class="p">(</span><span class="n">context</span><span class="o">=</span><span class="s2">"Choke"</span><span class="p">,</span> <span class="n">parameter</span><span class="o">=</span><span class="n">Parameters</span><span class="o">.</span><span class="n">Choke</span><span class="o">.</span><span class="n">BEANSIZE</span><span class="p">)</span><span class="o">.</span><span class="n">units</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">describe</span><span class="p">(</span><span class="n">context</span><span class="o">=</span><span class="s2">"Choke"</span><span class="p">,</span> <span class="n">parameter</span><span class="o">=</span><span class="n">Parameters</span><span class="o">.</span><span class="n">Choke</span><span class="o">.</span><span class="n">BEANSIZE</span><span class="p">)</span><span class="o">.</span><span class="n">units_symbol</span>
+</pre></div>
+</div>
+<p>Get the engineering unit conversion for a parameter:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">describe</span><span class="p">(</span><span class="n">context</span><span class="o">=</span><span class="s2">"Choke"</span><span class="p">,</span> <span class="n">parameter</span><span class="o">=</span><span class="n">Parameters</span><span class="o">.</span><span class="n">Choke</span><span class="o">.</span><span class="n">BEANSIZE</span><span class="p">)</span><span class="o">.</span><span class="n">si_scale</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">describe</span><span class="p">(</span><span class="n">context</span><span class="o">=</span><span class="s2">"Choke"</span><span class="p">,</span> <span class="n">parameter</span><span class="o">=</span><span class="n">Parameters</span><span class="o">.</span><span class="n">Choke</span><span class="o">.</span><span class="n">BEANSIZE</span><span class="p">)</span><span class="o">.</span><span class="n">si_offset</span>
+</pre></div>
+</div>
+</section>
+<section id="data-export">
+<h2>Data Export<a class="headerlink" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html#data-export" title="Permalink to this heading">¶</a></h2>
+<p>The model parameters can be exported to a csv file. Note that this does not
+include the tabulated data such as trajectories at this time:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">export_parameters</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s2">"C:/Temp/myproject/ExportedParams.csv"</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="batch-update">
+<h2>Batch Update<a class="headerlink" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html#batch-update" title="Permalink to this heading">¶</a></h2>
+<p>Operations such as get/set are performed immediately and independently
+on the model. Each command must finish before the next one can start. There
+is an overhead on performing each operation through the underlying web API.</p>
+<p>The batch update method caches the operations and perform them as a
+single operation on the web API. This provides improved performance over
+doing individual operations.</p>
+<p>The syntax for using the batch operation is:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">model</span><span class="o">.</span><span class="n">batch_update</span><span class="p">():</span>
+<span class="go">        model.set_value(</span>
+<span class="go">            BlackOilFluid="BK111",</span>
+<span class="go">            parameter=Parameters.BlackOilFluid.GOR,</span>
+<span class="go">            value=200)</span>
+<span class="go">        model.set_value(</span>
+<span class="go">            BlackOilFluid="BK111",</span>
+<span class="go">            parameter=Parameters.BlackOilFluid.WATERCUT,</span>
+<span class="go">            value=5)</span>
+<span class="go">        model.set_value(</span>
+<span class="go">            BlackOilFluid="BK111",</span>
+<span class="go">            parameter=Parameters.BlackOilFluid.GASSPECIFICGRAVITY,</span>
+<span class="go">            value=0.7)</span>
+<span class="go">        model.set_value(</span>
+<span class="go">            BlackOilFluid="BK111",</span>
+<span class="go">            parameter=Parameters.BlackOilFluid.WATERSPECIFICGRAVITY,</span>
+<span class="go">            value=1.05)</span>
+<span class="go">        model.set_value(</span>
+<span class="go">            BlackOilFluid="BK111",</span>
+<span class="go">            parameter=Parameters.BlackOilFluid.API,</span>
+<span class="go">            value=21)</span>
+<span class="go">        model.set_value(</span>
+<span class="go">            BlackOilFluid="BK111",</span>
+<span class="go">            parameter=Parameters.BlackOilFluid.FRACTIONCO2,</span>
+<span class="go">            value=0.05)</span>
+<span class="go">        model.set_value(</span>
+<span class="go">            BlackOilFluid="BK111",</span>
+<span class="go">            parameter=Parameters.BlackOilFluid.FRACTIONH2S,</span>
+<span class="go">            value=0.001)</span>
+<span class="go">        model.set_value(</span>
+<span class="go">            BlackOilFluid="BK111",</span>
+<span class="go">            parameter=Parameters.BlackOilFluid.FRACTIONN2,</span>
+<span class="go">            value=0.1)</span>
+</pre></div>
+</div>
+</section>
+<section id="utility-functions">
+<h2>Utility Functions<a class="headerlink" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html#utility-functions" title="Permalink to this heading">¶</a></h2>
+<p>The following utility functions are included in the PIPESIM Python Toolkit.</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Method</strong></p></th>
+<th class="head"><p><strong>Description</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>convert_tubing_bmd()</p></td>
+<td><p>Convert bottom measured depth to top measured depth and length.</p></td>
+</tr>
+</tbody>
+</table>
+<section id="convert-bottom-measured-depth">
+<h3>Convert Bottom Measured Depth<a class="headerlink" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html#convert-bottom-measured-depth" title="Permalink to this heading">¶</a></h3>
+<p>The PIPESIM data model uses top measured depth (TMD) and length as the
+parameters for tubing, casing and liners. Data is often provided, however,
+as bottom measured depth (BMD). The method converts a list of BMD to
+a dictionary of TMD and length for setting as parameters.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sixgill.utilities</span> <span class="kn">import</span> <span class="n">convert_tubing_bmd</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tmd_param</span> <span class="o">=</span> <span class="n">convert_tubing_bmd</span><span class="p">([</span><span class="mf">2000.0</span><span class="p">,</span> <span class="mf">2400.0</span><span class="p">,</span> <span class="mf">2800.0</span><span class="p">,</span> <span class="mf">3500.0</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">ModelComponents</span><span class="o">.</span><span class="n">CASING</span><span class="p">,</span> <span class="s2">"Csg1"</span><span class="p">,</span> <span class="n">context</span><span class="o">=</span><span class="s2">"Well1"</span><span class="p">,</span> <span class="n">parameters</span><span class="o">=</span><span class="n">tmd_param</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">ModelComponents</span><span class="o">.</span><span class="n">TUBING</span><span class="p">,</span> <span class="s2">"Tb1"</span><span class="p">,</span> <span class="n">context</span><span class="o">=</span><span class="s2">"Well1"</span><span class="p">,</span> <span class="n">parameters</span><span class="o">=</span><span class="n">tmd_param</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+<section id="exploring-the-model-further">
+<h1>Exploring the Model Further<a class="headerlink" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html#exploring-the-model-further" title="Permalink to this heading">¶</a></h1>
+<p>The Python Toolkit provides complete access to the underlying data model
+through the function calls. In many areas there are several ways to access
+the same data.</p>
+<p>For instance, to use the surface conditions of a well for the boundaries:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">tasks</span><span class="o">.</span><span class="n">networksimulation</span><span class="o">.</span><span class="n">use_surface_conditions</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</div>
+<p>This is also available through:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">set_value</span><span class="p">(</span><span class="n">component</span><span class="o">=</span><span class="n">ModelComponents</span><span class="o">.</span><span class="n">NETWORKSIMULATION</span><span class="p">,</span>
+<span class="go">        Study='Study 1',</span>
+<span class="go">        parameter=Parameters.NetworkSimulation.USESURFACEBOUNDARYCONDITIONS,</span>
+<span class="go">        value = True)</span>
+</pre></div>
+</div>
+</section>
+<section id="quick-reference">
+<h1>Quick Reference<a class="headerlink" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html#quick-reference" title="Permalink to this heading">¶</a></h1>
+<section id="model-class">
+<h2>Model Class<a class="headerlink" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html#model-class" title="Permalink to this heading">¶</a></h2>
+<section id="properties">
+<h3>Properties<a class="headerlink" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html#properties" title="Permalink to this heading">¶</a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Property</strong></p></th>
+<th class="head"><p><strong>Description</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>api</p></td>
+<td><p>PipesimSession. The web API object connected to PIPESIM</p></td>
+</tr>
+<tr class="row-odd"><td><p>context</p></td>
+<td><p>AbstractModelContext. The full (root) context of the model</p></td>
+</tr>
+<tr class="row-even"><td><p>is_open</p></td>
+<td><p>Boolean. Whether the model is open (True) or not (False)</p></td>
+</tr>
+<tr class="row-odd"><td><p>filename</p></td>
+<td><p>String. The full path and filename of the model.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="methods">
+<h3>Methods<a class="headerlink" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html#methods" title="Permalink to this heading">¶</a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Method</strong></p></th>
+<th class="head"><p><strong>Description</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>about()</p></td>
+<td><p>Return the details about the model and PIPESIM version</p></td>
+</tr>
+<tr class="row-odd"><td><p>add()</p></td>
+<td><p>Add a component to the model</p></td>
+</tr>
+<tr class="row-even"><td><p>batch_update()</p></td>
+<td><p>Cache the model updates and apply as a single operation</p></td>
+</tr>
+<tr class="row-odd"><td><p>close()</p></td>
+<td><p>Close the model</p></td>
+</tr>
+<tr class="row-even"><td><p>connect()</p></td>
+<td><p>Connect two model components</p></td>
+</tr>
+<tr class="row-odd"><td><p>connections()</p></td>
+<td><p>List the connections in the model</p></td>
+</tr>
+<tr class="row-even"><td><p>convert()</p></td>
+<td><p>Convert a component to a different type</p></td>
+</tr>
+<tr class="row-odd"><td><p>copy()</p></td>
+<td><p>Copy a model component</p></td>
+</tr>
+<tr class="row-even"><td><p>delete()</p></td>
+<td><p>Delete a component from the model</p></td>
+</tr>
+<tr class="row-odd"><td><p>delete_simulation()</p></td>
+<td><p>Delete the simulation results</p></td>
+</tr>
+<tr class="row-even"><td><p>describe()</p></td>
+<td><p>Get the details of a parameter, such as units of measurement</p></td>
+</tr>
+<tr class="row-odd"><td><p>disconnect()</p></td>
+<td><p>Disconnect two model components</p></td>
+</tr>
+<tr class="row-even"><td><p>export_well()</p></td>
+<td><p>Export a well to a PIPESIM model file</p></td>
+</tr>
+<tr class="row-odd"><td><p>export_parameters()</p></td>
+<td><p>Export the model parameters to a csv file</p></td>
+</tr>
+<tr class="row-even"><td><p>filter()</p></td>
+<td><p>Filter the model for a specific context</p></td>
+</tr>
+<tr class="row-odd"><td><p>find()</p></td>
+<td><p>Find components in the model</p></td>
+</tr>
+<tr class="row-even"><td><p>get_completion_test_points()</p></td>
+<td><p>Get the completion test points</p></td>
+</tr>
+<tr class="row-odd"><td><p>get_elevation()</p></td>
+<td><p>Get the elevation for a latitude / longitude location</p></td>
+</tr>
+<tr class="row-even"><td><p>get_elevations()</p></td>
+<td><p>Get elevations for multiple latitude / longitude locations</p></td>
+</tr>
+<tr class="row-odd"><td><p>get_geometry()</p></td>
+<td><p>Get the flowline geometry</p></td>
+</tr>
+<tr class="row-even"><td><p>get_geothermal_profile()</p></td>
+<td><p>Get the geothermal profile</p></td>
+</tr>
+<tr class="row-odd"><td><p>get_pq_curve()</p></td>
+<td><p>Get the well performance curve</p></td>
+</tr>
+<tr class="row-even"><td><p>get_trajectory()</p></td>
+<td><p>Get the well trajectory</p></td>
+</tr>
+<tr class="row-odd"><td><p>get_value()</p></td>
+<td><p>Get a parameter from a model component</p></td>
+</tr>
+<tr class="row-even"><td><p>get_values()</p></td>
+<td><p>Get parameters from model components</p></td>
+</tr>
+<tr class="row-odd"><td><p>import_well()</p></td>
+<td><p>Import a well from a PIPESIM model</p></td>
+</tr>
+<tr class="row-even"><td><p>open()</p></td>
+<td><p>Open a PIPESIM model</p></td>
+</tr>
+<tr class="row-odd"><td><p>open_ui()</p></td>
+<td><p>Open a PIPESIM model in the PIPESIM UI</p></td>
+</tr>
+<tr class="row-even"><td><p>read_catalog()</p></td>
+<td><p>Update the component parameters from the catalog</p></td>
+</tr>
+<tr class="row-odd"><td><p>save()</p></td>
+<td><p>Save the PIPESIM model</p></td>
+</tr>
+<tr class="row-even"><td><p>set_all_value()</p></td>
+<td><p>Set the parameter for all the model components</p></td>
+</tr>
+<tr class="row-odd"><td><p>set_completion_test_points()</p></td>
+<td><p>Set the completion test points table</p></td>
+</tr>
+<tr class="row-even"><td><p>set_geometry()</p></td>
+<td><p>Set the flowline geometry</p></td>
+</tr>
+<tr class="row-odd"><td><p>set_geothermal_profile()</p></td>
+<td><p>Set the geothermal profile</p></td>
+</tr>
+<tr class="row-even"><td><p>set_pq_curve()</p></td>
+<td><p>Set the well performance curve</p></td>
+</tr>
+<tr class="row-odd"><td><p>set_trajectory()</p></td>
+<td><p>Set the well trajectory</p></td>
+</tr>
+<tr class="row-even"><td><p>set_value()</p></td>
+<td><p>Set a parameter on a model component</p></td>
+</tr>
+<tr class="row-odd"><td><p>set_values()</p></td>
+<td><p>Set a series of parameters on one or more model components</p></td>
+</tr>
+<tr class="row-even"><td><p>sim_settings()</p></td>
+<td><p>Get the simulation settings</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="about-class">
+<h2>About Class<a class="headerlink" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html#about-class" title="Permalink to this heading">¶</a></h2>
+<p>The properties and methods are accessed by prefixing with <em>model</em>.about.</p>
+<section id="id1">
+<h3>Properties<a class="headerlink" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html#id1" title="Permalink to this heading">¶</a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Property</strong></p></th>
+<th class="head"><p><strong>Description</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>filename</p></td>
+<td><p>String. The filename of the model.</p></td>
+</tr>
+<tr class="row-odd"><td><p>unit_system</p></td>
+<td><p>String. The units of measurement system.</p></td>
+</tr>
+<tr class="row-even"><td><p>ui_unit_system</p></td>
+<td><p>String. The display units of measurement system in UI.</p></td>
+</tr>
+<tr class="row-odd"><td><p>toolkit_version</p></td>
+<td><p>String. The release number of the PIPESIM Python Toolkit.</p></td>
+</tr>
+<tr class="row-even"><td><p>webapi_version</p></td>
+<td><p>String. The PIPESIM Web API release number</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id2">
+<h3>Methods<a class="headerlink" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html#id2" title="Permalink to this heading">¶</a></h3>
+<p>There are no methods on the About() class.</p>
+</section>
+</section>
+<section id="simulation-settings-class">
+<h2>Simulation Settings Class<a class="headerlink" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html#simulation-settings-class" title="Permalink to this heading">¶</a></h2>
+<section id="id3">
+<h3>Properties<a class="headerlink" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html#id3" title="Permalink to this heading">¶</a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Property</strong></p></th>
+<th class="head"><p><strong>Description</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ambient_temperature</p></td>
+<td><p>Float. The ambient temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>atmospheric_pressure</p></td>
+<td><p>Float. The atmostpheric pressure.</p></td>
+</tr>
+<tr class="row-even"><td><p>corrosion_efficiency</p></td>
+<td><p>Float. The corrosion efficiency</p></td>
+</tr>
+<tr class="row-odd"><td><p>corrosion_model</p></td>
+<td><p>String. The corrosion model (CorrosionModel static class)</p></td>
+</tr>
+<tr class="row-even"><td><p>erosional_velocity_constant</p></td>
+<td><p>Float. The erosional velocity constant.</p></td>
+</tr>
+<tr class="row-odd"><td><p>wind_speed</p></td>
+<td><p>Float. The wind speed.</p></td>
+</tr>
+<tr class="row-even"><td><p>soil_type</p></td>
+<td><p>String. The soil type (SoilType static class).</p></td>
+</tr>
+<tr class="row-odd"><td><p>soil_conductivity</p></td>
+<td><p>Float. The soil conductivity</p></td>
+</tr>
+<tr class="row-even"><td><p>metocean_data_location</p></td>
+<td><p>String. The Metocean data location. (MetoceanDataLocation static class).</p></td>
+</tr>
+<tr class="row-odd"><td><p>max_report_interval_length</p></td>
+<td><p>Float. The maximum report interval length for pipe segmentation.</p></td>
+</tr>
+<tr class="row-even"><td><p>print_computation_segment_result</p></td>
+<td><p>Boolean. Print the computational segment result for pipe segmentation.</p></td>
+</tr>
+<tr class="row-odd"><td><p>max_computation_segment_length</p></td>
+<td><p>Float. The maximum computational segment length for pipe segmentation.</p></td>
+</tr>
+<tr class="row-even"><td><p>network_solver_method</p></td>
+<td><p>String. The network solver method (NetworkSolverMethod static class).</p></td>
+</tr>
+<tr class="row-odd"><td><p>network_solver_tolerance</p></td>
+<td><p>Float. The network solver tolerance.</p></td>
+</tr>
+<tr class="row-even"><td><p>network_solver_max_iterations</p></td>
+<td><p>Integer. The network solver maximum number of iterations.</p></td>
+</tr>
+<tr class="row-odd"><td><p>single_branch_keywords</p></td>
+<td><p>String. Single branch engine keywords.</p></td>
+</tr>
+<tr class="row-even"><td><p>network_keywords_top</p></td>
+<td><p>String. Network engine top keywords.</p></td>
+</tr>
+<tr class="row-odd"><td><p>network_keywords_bottom</p></td>
+<td><p>String. Network engine bottom keywords.</p></td>
+</tr>
+<tr class="row-even"><td><p>gis_elevation_interval</p></td>
+<td><p>Float. GIS elevation interval.</p></td>
+</tr>
+<tr class="row-odd"><td><p>gis_elevation_max_points</p></td>
+<td><p>Integer. GIS elevation maximum number of points.</p></td>
+</tr>
+<tr class="row-even"><td><p>gis_elevation_data_source</p></td>
+<td><p>String. GIS elevation data source (GISDataSource static class).</p></td>
+</tr>
+<tr class="row-odd"><td><p>use_global_flow_correlation</p></td>
+<td><p>Boolean. Use the global flow correlations.</p></td>
+</tr>
+<tr class="row-even"><td><p>use_global_heat_transfer</p></td>
+<td><p>Boolean. Use the global heat transfer settings.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id4">
+<h3>Methods<a class="headerlink" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html#id4" title="Permalink to this heading">¶</a></h3>
+<p>There are no methods on the SimulationSettings() class. The <em>model</em>.sim_settings()
+can return a dictionary, or be treated as a dictionary. See the examples under
+the Quick Start section.</p>
+</section>
+</section>
+<section id="fluids-class">
+<h2>Fluids Class<a class="headerlink" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html#fluids-class" title="Permalink to this heading">¶</a></h2>
+<p>The properties and methods are accessed by prefixing with <em>model</em>.fluids.</p>
+<section id="id5">
+<h3>Properties<a class="headerlink" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html#id5" title="Permalink to this heading">¶</a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Property</strong></p></th>
+<th class="head"><p><strong>Description</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>fluid_type</p></td>
+<td><p>The type of fluid used (FluidType static class).</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id6">
+<h3>Methods<a class="headerlink" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html#id6" title="Permalink to this heading">¶</a></h3>
+<p>There are no methods on the fluids class.</p>
+</section>
+</section>
+<section id="compositional-fluid-class">
+<h2>Compositional Fluid Class<a class="headerlink" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html#compositional-fluid-class" title="Permalink to this heading">¶</a></h2>
+<p>The properties and methods are accessed by prefixing with <em>model</em>.fluids.compositional</p>
+<section id="id7">
+<h3>Properties<a class="headerlink" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html#id7" title="Permalink to this heading">¶</a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Property</strong></p></th>
+<th class="head"><p><strong>Description</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>equation_of_state</p></td>
+<td><p>String. Equation of state (EquationOfState static class).</p></td>
+</tr>
+<tr class="row-odd"><td><p>pvt_package</p></td>
+<td><p>String. PVT Package (PVTPackage static class).</p></td>
+</tr>
+<tr class="row-even"><td><p>salinity_model</p></td>
+<td><p>String. Salinity model (SalinityModel static class).</p></td>
+</tr>
+<tr class="row-odd"><td><p>acf_correlation</p></td>
+<td><p>String. ACF Correlation (ACFCorrelationMethod static class).</p></td>
+</tr>
+<tr class="row-even"><td><p>critical_property_correlation</p></td>
+<td><p>String. Critical Property Correlation (CriticalPropertyCorrelationMethod class).</p></td>
+</tr>
+<tr class="row-odd"><td><p>thermal_coefficient_correlation</p></td>
+<td><p>String. Thermal Coefficient Correlation (ThermalCoefficientCorrelationMethod class).</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id8">
+<h3>Methods<a class="headerlink" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html#id8" title="Permalink to this heading">¶</a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Property</strong></p></th>
+<th class="head"><p><strong>Description</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>add_pseudocomponent()</p></td>
+<td><p>Add a pseudocomponent.</p></td>
+</tr>
+<tr class="row-odd"><td><p>delete_pseudocomponent()</p></td>
+<td><p>Delete a pseudocomponent.</p></td>
+</tr>
+<tr class="row-even"><td><p>select_components()</p></td>
+<td><p>Select components for the compositional fluid.</p></td>
+</tr>
+<tr class="row-odd"><td><p>unselect_components()</p></td>
+<td><p>Unselect components for the compositional fluid.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="simulation-tasks-class">
+<h2>Simulation Tasks Class<a class="headerlink" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html#simulation-tasks-class" title="Permalink to this heading">¶</a></h2>
+<p>The properties and methods are accessed by prefixing with <em>model</em>.tasks. There is
+a class for each of the supported tasks.</p>
+<section id="classes">
+<h3>Classes<a class="headerlink" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html#classes" title="Permalink to this heading">¶</a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Class</strong></p></th>
+<th class="head"><p><strong>Description</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>networksimulation</p></td>
+<td><p>Methods for running network simulation studies.</p></td>
+</tr>
+<tr class="row-odd"><td><p>networkoptimizersimulation</p></td>
+<td><p>Methods for running network optimization studies.</p></td>
+</tr>
+<tr class="row-even"><td><p>ptprofilesimulation</p></td>
+<td><p>Methods for running PT profile simulation studies.</p></td>
+</tr>
+<tr class="row-odd"><td><p>nodalanalysis</p></td>
+<td><p>Methods for running nodal analysis simulation studies.</p></td>
+</tr>
+<tr class="row-even"><td><p>systemanalysis</p></td>
+<td><p>Methods for running system analysis simulation studies.</p></td>
+</tr>
+<tr class="row-odd"><td><p>wellperformancecurves</p></td>
+<td><p>Methods for running well performance curves simulation studies.</p></td>
+</tr>
+<tr class="row-even"><td><p>gldiagnostics</p></td>
+<td><p>Methods for running gas lift diagnostics simulation studies.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id9">
+<h3>Methods<a class="headerlink" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html#id9" title="Permalink to this heading">¶</a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Property</strong></p></th>
+<th class="head"><p><strong>Description</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>delete_results()</p></td>
+<td><p>Delete the simulation results.</p></td>
+</tr>
+<tr class="row-odd"><td><p>generate_engine_files()</p></td>
+<td><p>Generate the engine files for a study</p></td>
+</tr>
+<tr class="row-even"><td><p>get_calculated_variables()</p></td>
+<td><p>PT Profile. Get the available calculated variables.</p></td>
+</tr>
+<tr class="row-odd"><td><p>get_conditions()</p></td>
+<td><p>Get the study boundary conditions.</p></td>
+</tr>
+<tr class="row-even"><td><p>get_messages()</p></td>
+<td><p>Get the simulation messages of the simulation.</p></td>
+</tr>
+<tr class="row-odd"><td><p>get_results()</p></td>
+<td><p>Get the simulation results.</p></td>
+</tr>
+<tr class="row-even"><td><p>get_sensitivity_variables()</p></td>
+<td><p>PT Profile. Get the available sensitivity variables.</p></td>
+</tr>
+<tr class="row-odd"><td><p>get_state()</p></td>
+<td><p>Get the running state of the simulation.</p></td>
+</tr>
+<tr class="row-even"><td><p>get_use_surface_conditions()</p></td>
+<td><p>Get whether the model is using surface conditions.</p></td>
+</tr>
+<tr class="row-odd"><td><p>reset_conditions()</p></td>
+<td><p>Reset the study boundary / inlet conditions.</p></td>
+</tr>
+<tr class="row-even"><td><p>run()</p></td>
+<td><p>Run a simulation task and wait for it to finish.</p></td>
+</tr>
+<tr class="row-odd"><td><p>set_conditions()</p></td>
+<td><p>Set the study boundary conditions or general conditions.</p></td>
+</tr>
+<tr class="row-even"><td><p>set_use_surface_conditions()</p></td>
+<td><p>Set whether the model is using surface conditions.</p></td>
+</tr>
+<tr class="row-odd"><td><p>start()</p></td>
+<td><p>Start a simulation task.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="simulation-result-class">
+<h2>Simulation Result Class<a class="headerlink" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html#simulation-result-class" title="Permalink to this heading">¶</a></h2>
+<section id="id10">
+<h3>Properties<a class="headerlink" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html#id10" title="Permalink to this heading">¶</a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Property</strong></p></th>
+<th class="head"><p><strong>Description</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>system</p></td>
+<td><p>Dictionary. System results of a simulation run.         .</p></td>
+</tr>
+<tr class="row-odd"><td><p>node</p></td>
+<td><p>Dictionary. Node results of a simulation run.</p></td>
+</tr>
+<tr class="row-even"><td><p>profile</p></td>
+<td><p>Dictionary. Profile results of a sumulation run.</p></td>
+</tr>
+<tr class="row-odd"><td><p>profile_units</p></td>
+<td><p>Dictionary. Profile variables and units mapping.</p></td>
+</tr>
+<tr class="row-even"><td><p>cases</p></td>
+<td><p>List. A list of sensitivity cases for a single branch simulation run.</p></td>
+</tr>
+<tr class="row-odd"><td><p>messages</p></td>
+<td><p>List. A list of engine console messages from a simulation run.</p></td>
+</tr>
+<tr class="row-even"><td><p>summary</p></td>
+<td><p>Dictionary. A summary of a simulation run status, including errors and warnings.</p></td>
+</tr>
+<tr class="row-odd"><td><p>state</p></td>
+<td><p>String. The state of a simulation run: RUNNING, COMPLETED, FAILED.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id11">
+<h3>Methods<a class="headerlink" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html#id11" title="Permalink to this heading">¶</a></h3>
+<p>There are no methods on the SimulationResult() class.</p>
+</section>
+</section>
+<section id="nodal-analysis-result-class">
+<h2>Nodal Analysis Result Class<a class="headerlink" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html#nodal-analysis-result-class" title="Permalink to this heading">¶</a></h2>
+<p>A subclass of Simulation Result class containing data for Nodal Plot.</p>
+<section id="id12">
+<h3>Properties<a class="headerlink" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html#id12" title="Permalink to this heading">¶</a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Property</strong></p></th>
+<th class="head"><p><strong>Description</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>inflow_curves</p></td>
+<td><p>List. A list of inflow curves, one per each inflow case.</p></td>
+</tr>
+<tr class="row-odd"><td><p>outflow_curves</p></td>
+<td><p>List. A list of outflow curves, one per each outflow case.</p></td>
+</tr>
+<tr class="row-even"><td><p>operating_points</p></td>
+<td><p>List. A list of operation points, one per each sensitivity case.</p></td>
+</tr>
+<tr class="row-odd"><td><p>inflow_cases</p></td>
+<td><p>List. A list of inflow case names.</p></td>
+</tr>
+<tr class="row-even"><td><p>outflow_cases</p></td>
+<td><p>List. A list of outflow case names.</p></td>
+</tr>
+<tr class="row-odd"><td><p>fluid_base</p></td>
+<td><p>String. The fluid base of nodal simulation results: GAS, LIQUID, or MASS.</p></td>
+</tr>
+<tr class="row-even"><td><p>operating_envelope</p></td>
+<td><p>Operating envelope of nodal analysis simulation.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id13">
+<h3>Methods<a class="headerlink" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html#id13" title="Permalink to this heading">¶</a></h3>
+<p>There are no methods on the NodalAnalysisResult() class.</p>
+</section>
+</section>
+<section id="definitions-sub-module">
+<h2>Definitions Sub-Module<a class="headerlink" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html#definitions-sub-module" title="Permalink to this heading">¶</a></h2>
+<p>The definitions sub-module within Sixgill provides static classes for the model
+operations and parameterization. The enumerations of parameters such as
+EmulsionViscosityMethod.CONTINUOUSPHASE translating to ‘ContinuousPhase’ is
+provided for autocompletion and code editing intellisense.</p>
+<section id="static-classes">
+<h3>Static Classes<a class="headerlink" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html#static-classes" title="Permalink to this heading">¶</a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Static Class</strong></p></th>
+<th class="head"><p><strong>Description</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Connection</p></td>
+<td><p>Model component connection ports.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Constants</p></td>
+<td><p>String enumerations used by the PIPESIM data model.</p></td>
+</tr>
+<tr class="row-even"><td><p>ModelComponents</p></td>
+<td><p>Model components.</p></td>
+</tr>
+<tr class="row-odd"><td><p>OutputVariables</p></td>
+<td><p>Predefined groups of output variables.</p></td>
+</tr>
+<tr class="row-even"><td><p>Parameters</p></td>
+<td><p>Parameters for each model component.</p></td>
+</tr>
+<tr class="row-odd"><td><p>ProfileVariables</p></td>
+<td><p>Output profile variables.</p></td>
+</tr>
+<tr class="row-even"><td><p>SimulationState</p></td>
+<td><p>Simulation states.</p></td>
+</tr>
+<tr class="row-odd"><td><p>SystemVariables</p></td>
+<td><p>Output system variables.</p></td>
+</tr>
+<tr class="row-even"><td><p>Tasks</p></td>
+<td><p>Tasks that can be performed on the model.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Units</p></td>
+<td><p>Available unit systems when opening a model.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="special-keywords">
+<h3>Special Keywords<a class="headerlink" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html#special-keywords" title="Permalink to this heading">¶</a></h3>
+<p>The following special string definitions are provided as global variables:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Global Variable</strong></p></th>
+<th class="head"><p><strong>Description</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>NAN</p></td>
+<td><p>Mathematical operator “Not a Number” (NaN).</p></td>
+</tr>
+<tr class="row-odd"><td><p>ALL</p></td>
+<td><p>Match all the items in the context.</p></td>
+</tr>
+<tr class="row-even"><td><p>NONE</p></td>
+<td><p>Match none of the items in the context.</p></td>
+</tr>
+<tr class="row-odd"><td><p>TEMPLATE</p></td>
+<td><p>Match template items in the context.</p></td>
+</tr>
+<tr class="row-even"><td><p>GLOBAL</p></td>
+<td><p>The global setting (heat transfer and flow correlations).</p></td>
+</tr>
+<tr class="row-odd"><td><p>DEFAULT</p></td>
+<td><p>The default setting (heat transfer and flow correlations).</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+</section>
+<section id="important-notes">
+<h1>Important Notes<a class="headerlink" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html#important-notes" title="Permalink to this heading">¶</a></h1>
+<section id="component-conversion">
+<h2>Component Conversion<a class="headerlink" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html#component-conversion" title="Permalink to this heading">¶</a></h2>
+<p>The Python Toolkit only supports converting junctions, which can only be
+converted to a Well, Source or Sink.</p>
+</section>
+<section id="component-copying">
+<h2>Component Copying<a class="headerlink" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html#component-copying" title="Permalink to this heading">¶</a></h2>
+<p>The copy() method only works on wells at this time.</p>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/index.html">
+              <img class="logo" src="./Quick Start — PIPESIM Python Toolkit 2023.1 documentation_files/PIPESIM.png" alt="Logo">
+            </a></p>
+  <div>
+    <h3><a href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html#">Quick Start</a><ul>
+<li><a class="reference internal" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html#open-save-and-close">Open, Save and Close</a></li>
+<li><a class="reference internal" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html#query-the-model">Query the Model</a></li>
+<li><a class="reference internal" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html#read-and-write-parameters">Read and Write Parameters</a></li>
+<li><a class="reference internal" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html#read-and-write-data-tables">Read and Write Data Tables</a></li>
+<li><a class="reference internal" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html#add-and-delete">Add and Delete</a></li>
+<li><a class="reference internal" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html#copy-convert-and-rename">Copy, Convert, and Rename</a></li>
+<li><a class="reference internal" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html#connect-and-disconnect">Connect and Disconnect</a></li>
+<li><a class="reference internal" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html#manipulate-fluids">Manipulate Fluids</a></li>
+<li><a class="reference internal" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html#import-and-export-wells">Import and Export Wells</a></li>
+<li><a class="reference internal" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html#catalog-and-gis">Catalog and GIS</a></li>
+<li><a class="reference internal" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html#simulation-settings">Simulation Settings</a></li>
+<li><a class="reference internal" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html#simulations">Simulations</a></li>
+<li><a class="reference internal" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html#units-of-measurement">Units of Measurement</a></li>
+<li><a class="reference internal" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html#data-export">Data Export</a></li>
+<li><a class="reference internal" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html#batch-update">Batch Update</a></li>
+<li><a class="reference internal" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html#utility-functions">Utility Functions</a><ul>
+<li><a class="reference internal" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html#convert-bottom-measured-depth">Convert Bottom Measured Depth</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html#exploring-the-model-further">Exploring the Model Further</a></li>
+<li><a class="reference internal" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html#quick-reference">Quick Reference</a><ul>
+<li><a class="reference internal" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html#model-class">Model Class</a><ul>
+<li><a class="reference internal" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html#properties">Properties</a></li>
+<li><a class="reference internal" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html#methods">Methods</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html#about-class">About Class</a><ul>
+<li><a class="reference internal" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html#id1">Properties</a></li>
+<li><a class="reference internal" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html#id2">Methods</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html#simulation-settings-class">Simulation Settings Class</a><ul>
+<li><a class="reference internal" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html#id3">Properties</a></li>
+<li><a class="reference internal" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html#id4">Methods</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html#fluids-class">Fluids Class</a><ul>
+<li><a class="reference internal" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html#id5">Properties</a></li>
+<li><a class="reference internal" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html#id6">Methods</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html#compositional-fluid-class">Compositional Fluid Class</a><ul>
+<li><a class="reference internal" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html#id7">Properties</a></li>
+<li><a class="reference internal" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html#id8">Methods</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html#simulation-tasks-class">Simulation Tasks Class</a><ul>
+<li><a class="reference internal" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html#classes">Classes</a></li>
+<li><a class="reference internal" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html#id9">Methods</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html#simulation-result-class">Simulation Result Class</a><ul>
+<li><a class="reference internal" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html#id10">Properties</a></li>
+<li><a class="reference internal" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html#id11">Methods</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html#nodal-analysis-result-class">Nodal Analysis Result Class</a><ul>
+<li><a class="reference internal" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html#id12">Properties</a></li>
+<li><a class="reference internal" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html#id13">Methods</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html#definitions-sub-module">Definitions Sub-Module</a><ul>
+<li><a class="reference internal" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html#static-classes">Static Classes</a></li>
+<li><a class="reference internal" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html#special-keywords">Special Keywords</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html#important-notes">Important Notes</a><ul>
+<li><a class="reference internal" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html#component-conversion">Component Conversion</a></li>
+<li><a class="reference internal" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html#component-copying">Component Copying</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/changes.html" title="previous chapter">Changes From Previous Version</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/excel.html" title="next chapter">Working with Excel</a></p>
+  </div>
+<div id="searchbox" style="display: block;" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+      <input type="submit" value="Go">
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/py-modindex.html" title="Python Module Index">modules</a> |</li>
+        <li class="right">
+          <a href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/excel.html" title="Working with Excel">next</a> |</li>
+        <li class="right">
+          <a href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/changes.html" title="Changes From Previous Version">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/index.html">PIPESIM Python Toolkit 2023.1 documentation</a> »</li>
+        <li class="nav-item nav-item-this"><a href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html">Quick Start</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        © Copyright 2023, Schlumberger.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
+    </div>
+  
+</body></html>

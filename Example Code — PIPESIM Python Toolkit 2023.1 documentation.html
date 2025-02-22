@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<!-- saved from url=(0123)file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/examples.html?highlight=model -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/">
+
+    <title>Example Code — PIPESIM Python Toolkit 2023.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="./Example Code — PIPESIM Python Toolkit 2023.1 documentation_files/pygments.css">
+    <link rel="stylesheet" type="text/css" href="./Example Code — PIPESIM Python Toolkit 2023.1 documentation_files/bizstyle.css">
+    
+    <script data-url_root="./" id="documentation_options" src="./Example Code — PIPESIM Python Toolkit 2023.1 documentation_files/documentation_options.js.download"></script>
+    <script src="./Example Code — PIPESIM Python Toolkit 2023.1 documentation_files/jquery.js.download"></script>
+    <script src="./Example Code — PIPESIM Python Toolkit 2023.1 documentation_files/underscore.js.download"></script>
+    <script src="./Example Code — PIPESIM Python Toolkit 2023.1 documentation_files/_sphinx_javascript_frameworks_compat.js.download"></script>
+    <script src="./Example Code — PIPESIM Python Toolkit 2023.1 documentation_files/doctools.js.download"></script>
+    <script src="./Example Code — PIPESIM Python Toolkit 2023.1 documentation_files/bizstyle.js.download"></script>
+    <link rel="index" title="Index" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/genindex.html">
+    <link rel="search" title="Search" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/search.html">
+    <link rel="next" title="Troubleshooting" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/troubleshooting.html">
+    <link rel="prev" title="Working with Excel" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/excel.html">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!--[if lt IE 9]>
+    <script src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/py-modindex.html" title="Python Module Index">modules</a> |</li>
+        <li class="right">
+          <a href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/troubleshooting.html" title="Troubleshooting" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/excel.html" title="Working with Excel" accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/index.html">PIPESIM Python Toolkit 2023.1 documentation</a> »</li>
+        <li class="nav-item nav-item-this"><a href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/examples.html?highlight=model">Example Code</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="example-code">
+<h1>Example Code<a class="headerlink" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/examples.html?highlight=model#example-code" title="Permalink to this heading">¶</a></h1>
+<p>The PIPESIM Python Toolkit includes example scripts that cover all of
+its available methods, classes and properties. The scripts demonstrate
+the features and usage, which is indicated in the name of the script.
+They are located in the PIPESIM installation folder, under Development
+Tools/Python Toolkit.</p>
+<p>Along with the example scripts there are also several Case Studies. These
+are designed to demonstration potential use cases for the PIPESIM Python
+Toolkit with more in depth code and and scripting. The case studies are
+located in the PIPESIM installation folder, under Case Studies/Python Toolkit.</p>
+<p>Before running the scripts or case studies, it is necessary to copy
+the Case Studies and Development Tools folders from the Program Files
+location into your Documents home folder. This is because the typical
+security settings for Windows limit read and write access in Program Files.</p>
+<section id="example-scripts">
+<h2>Example Scripts<a class="headerlink" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/examples.html?highlight=model#example-scripts" title="Permalink to this heading">¶</a></h2>
+<p>The following example scripts are included with the PIPESIM Python Toolkit.</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Script</strong></p></th>
+<th class="head"><p><strong>Description</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>add_and_delete.py</p></td>
+<td><p>Add and delete <span class="highlighted">model</span> components.</p></td>
+</tr>
+<tr class="row-odd"><td><p>add_well.py</p></td>
+<td><p>Create a new <span class="highlighted">model</span> and add a well.</p></td>
+</tr>
+<tr class="row-even"><td><p>check_<span class="highlighted">model</span>_components.py</p></td>
+<td><p>Open the Oil Network case study and review the <span class="highlighted">model</span> components.</p></td>
+</tr>
+<tr class="row-odd"><td><p>connect_disconnect.py</p></td>
+<td><p>Connect and disconnect <span class="highlighted">model</span> component connections.</p></td>
+</tr>
+<tr class="row-even"><td><p>connections.py</p></td>
+<td><p>Display <span class="highlighted">model</span> connections.</p></td>
+</tr>
+<tr class="row-odd"><td><p>convert.py</p></td>
+<td><p>Convert a junction into a well or source.</p></td>
+</tr>
+<tr class="row-even"><td><p>copy_well.py</p></td>
+<td><p>Copy (duplicate) a well.</p></td>
+</tr>
+<tr class="row-odd"><td><p>create_black_oil_fluid.py</p></td>
+<td><p>Create a black oil fluid.</p></td>
+</tr>
+<tr class="row-even"><td><p>create_compositional_fluid.py</p></td>
+<td><p>Create a compositional fluid.</p></td>
+</tr>
+<tr class="row-odd"><td><p>create_GIS_network.py</p></td>
+<td><p>Create a network <span class="highlighted">model</span> with GIS coordinates.</p></td>
+</tr>
+<tr class="row-even"><td><p>create_network.py</p></td>
+<td><p>Create a network <span class="highlighted">model</span>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>create_well_from_template.py</p></td>
+<td><p>Create a well from a template.</p></td>
+</tr>
+<tr class="row-even"><td><p>describe.py</p></td>
+<td><p>Display engineering units for parameters.</p></td>
+</tr>
+<tr class="row-odd"><td><p>elevation.py</p></td>
+<td><p>Get the elevations of GIS locations.</p></td>
+</tr>
+<tr class="row-even"><td><p>elevations.py</p></td>
+<td><p>Get the elevations of a list of GIS locations.</p></td>
+</tr>
+<tr class="row-odd"><td><p>excel_macros_functions.xlsx</p></td>
+<td><p>Excel workbook with macros, functions and logging.</p></td>
+</tr>
+<tr class="row-even"><td><p>export_parameters.py</p></td>
+<td><p>Export <span class="highlighted">model</span> component parameters.</p></td>
+</tr>
+<tr class="row-odd"><td><p>find.py</p></td>
+<td><p>Find <span class="highlighted">model</span> components.</p></td>
+</tr>
+<tr class="row-even"><td><p>generate_engine_files.py</p></td>
+<td><p>Generate engine files for network and PT profile studies.</p></td>
+</tr>
+<tr class="row-odd"><td><p>get_completion_ipr_points.py</p></td>
+<td><p>Get a list of pressure, rate points for completion ipr <span class="highlighted">model</span>.</p></td>
+</tr>
+<tr class="row-even"><td><p>get_esp_curve_results.py</p></td>
+<td><p>Get ESP pump curve results.</p></td>
+</tr>
+<tr class="row-odd"><td><p>get_set_annulus_flow.py</p></td>
+<td><p>Update of annulus flow in flowline.</p></td>
+</tr>
+<tr class="row-even"><td><p>get_set_batch_update.py</p></td>
+<td><p>Perform a batch update on component parameters.</p></td>
+</tr>
+<tr class="row-odd"><td><p>get_set_black_oil.py</p></td>
+<td><p>Update black oil fluid parameters.</p></td>
+</tr>
+<tr class="row-even"><td><p>get_set_coating_table.py</p></td>
+<td><p>Update pipe coating parameters.</p></td>
+</tr>
+<tr class="row-odd"><td><p>get_set_completion_test_points.py</p></td>
+<td><p>Update completion test point parameters.</p></td>
+</tr>
+<tr class="row-even"><td><p>get_set_composite_ipr.py</p></td>
+<td><p>Update composite IPR.</p></td>
+</tr>
+<tr class="row-odd"><td><p>get_set_corrosion_<span class="highlighted">model</span>.py</p></td>
+<td><p>Update corrosion <span class="highlighted">model</span> values.</p></td>
+</tr>
+<tr class="row-even"><td><p>get_set_errosion_corrosion_risk_limits.py</p></td>
+<td><p>Update erosion corrosion risk limits values.</p></td>
+</tr>
+<tr class="row-odd"><td><p>get_set_esp_motor_and_cable.py</p></td>
+<td><p>Update esp motor and cable values.</p></td>
+</tr>
+<tr class="row-even"><td><p>get_set_flow_control_valve_generic.py</p></td>
+<td><p>Update flow control valve values in generic mode.</p></td>
+</tr>
+<tr class="row-odd"><td><p>get_set_flow_control_valve_specific.py</p></td>
+<td><p>Update flow control valve values in specific mode.</p></td>
+</tr>
+<tr class="row-even"><td><p>get_set_flow_correlations.py</p></td>
+<td><p>Update global and local flow correlations.</p></td>
+</tr>
+<tr class="row-odd"><td><p>get_set_fluid_composition.py</p></td>
+<td><p>Update fluid composition.</p></td>
+</tr>
+<tr class="row-even"><td><p>get_set_geometry.py</p></td>
+<td><p>Update flowline profile.</p></td>
+</tr>
+<tr class="row-odd"><td><p>get_set_geothermal_profile.py</p></td>
+<td><p>Update geothermal profile.</p></td>
+</tr>
+<tr class="row-even"><td><p>get_set_local_corrosion_<span class="highlighted">model</span>.py</p></td>
+<td><p>Update global/local corrosion <span class="highlighted">model</span> settings.</p></td>
+</tr>
+<tr class="row-odd"><td><p>get_set_mfl_fluid.py</p></td>
+<td><p>Update MFL fluid properties.</p></td>
+</tr>
+<tr class="row-even"><td><p>get_set_nodal_sim_inlet_conditions.py</p></td>
+<td><p>Update inlet conditions for a nodal analysis simulation.</p></td>
+</tr>
+<tr class="row-odd"><td><p>get_set_nodal_sim_sensitivites.py</p></td>
+<td><p>Update sensitivities for a nodal analysis simulation.</p></td>
+</tr>
+<tr class="row-even"><td><p>get_set_oil_well_ipr.py</p></td>
+<td><p>Update inflow performance relationship on a well completion.</p></td>
+</tr>
+<tr class="row-odd"><td><p>get_set_pq_curve.py</p></td>
+<td><p>Update a source PQ relationship curve.</p></td>
+</tr>
+<tr class="row-even"><td><p>get_set_pvt_fluid.py</p></td>
+<td><p>Update PVT fluid properties.</p></td>
+</tr>
+<tr class="row-odd"><td><p>get_set_relative_permeability_data.py</p></td>
+<td><p>Update relative permeability data on Darcy completion.</p></td>
+</tr>
+<tr class="row-even"><td><p>get_set_simulation_settings.py</p></td>
+<td><p>Update the simulation settings.</p></td>
+</tr>
+<tr class="row-odd"><td><p>get_set_study_conditions.py</p></td>
+<td><p>Update study conditions.</p></td>
+</tr>
+<tr class="row-even"><td><p>get_set_study_constraints.py</p></td>
+<td><p>Update study constraints.</p></td>
+</tr>
+<tr class="row-odd"><td><p>get_set_trilinear_ipr.py</p></td>
+<td><p>Add a horizontal completion with trilinear IPR and run simulation.</p></td>
+</tr>
+<tr class="row-even"><td><p>get_set_well_heat_transfer.py</p></td>
+<td><p>Get or set heat transfer table values.</p></td>
+</tr>
+<tr class="row-odd"><td><p>get_set_value.py</p></td>
+<td><p>Update a single parameter.</p></td>
+</tr>
+<tr class="row-even"><td><p>get_set_values.py</p></td>
+<td><p>Update many parameters.</p></td>
+</tr>
+<tr class="row-odd"><td><p>get_set_vfp_tables_conditions.py</p></td>
+<td><p>Update vfp tables simulation parameters.</p></td>
+</tr>
+<tr class="row-even"><td><p>get_set_well_trajectory.py</p></td>
+<td><p>Update a well trajectory.</p></td>
+</tr>
+<tr class="row-odd"><td><p>get_set_wellstream_outlet.py</p></td>
+<td><p>Update wellstream outlet.</p></td>
+</tr>
+<tr class="row-even"><td><p>get_set_user_mix_viscosity_table.py</p></td>
+<td><p>Update blackoil user defined mix viscosity table</p></td>
+</tr>
+<tr class="row-odd"><td><p>get_set_user_viscosity_table.py</p></td>
+<td><p>Update blackoil user defined viscosity table</p></td>
+</tr>
+<tr class="row-even"><td><p>get_set_using_component.py</p></td>
+<td><p>Get or set values using the find_component_objects method in <span class="highlighted">Model</span> class</p></td>
+</tr>
+<tr class="row-odd"><td><p>gldiagnosticssim_run_simulation.py</p></td>
+<td><p>Perform a Gas lift diagnostics simulation.</p></td>
+</tr>
+<tr class="row-even"><td><p>multiprocessing_run_simulation_parallel.py</p></td>
+<td><p>Run simulations in parallel using multiprocessing.</p></td>
+</tr>
+<tr class="row-odd"><td><p>multiprocessing_run_simulation_seq.py</p></td>
+<td><p>Run simulations sequentially using multiprocessing.</p></td>
+</tr>
+<tr class="row-even"><td><p>network_opt_sim_apply_results.py</p></td>
+<td><p>Perform a network optimizer simulation and apply the results to the <span class="highlighted">model</span>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>network_opt_sim.py</p></td>
+<td><p>Perform a network optimizer simulation.</p></td>
+</tr>
+<tr class="row-even"><td><p>networksim.py</p></td>
+<td><p>Perform a network simulation.</p></td>
+</tr>
+<tr class="row-odd"><td><p>networksim_async.py</p></td>
+<td><p>Perform a network simulation as a background task.</p></td>
+</tr>
+<tr class="row-even"><td><p>new.py</p></td>
+<td><p>Create a new PIPESIM <span class="highlighted">model</span>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>nodal_sim_multipoint.py</p></td>
+<td><p>Perform a nodal analysis simulation with multipointing.</p></td>
+</tr>
+<tr class="row-even"><td><p>nodal_sim_run_simulation.py</p></td>
+<td><p>Perform a nodal analysis simulation with custom conditions and show plot.</p></td>
+</tr>
+<tr class="row-odd"><td><p>nodal_sim_run_simulation_sensitivities.py</p></td>
+<td><p>Perform a nodal analysis simulation with sensitivities.</p></td>
+</tr>
+<tr class="row-even"><td><p>open_ui.py</p></td>
+<td><p>Open the PIPESIM <span class="highlighted">model</span> in the UI.</p></td>
+</tr>
+<tr class="row-odd"><td><p>open_close.py</p></td>
+<td><p>Open and close a PIPESIM <span class="highlighted">model</span>.</p></td>
+</tr>
+<tr class="row-even"><td><p>open_close_eu.py</p></td>
+<td><p>Open and close a PIPESIM <span class="highlighted">model</span> with alternative units.</p></td>
+</tr>
+<tr class="row-odd"><td><p>open_save.py</p></td>
+<td><p>Open and save a PIPESIM <span class="highlighted">model</span>.</p></td>
+</tr>
+<tr class="row-even"><td><p>ptprofilesim_calc_custom_variable.py</p></td>
+<td><p>Perform a PT Profile simulation with custom variable.</p></td>
+</tr>
+<tr class="row-odd"><td><p>ptprofilesim_calc_outlet_pressure.py</p></td>
+<td><p>Perform a PT Profile simulation with a specified outlet pressure.</p></td>
+</tr>
+<tr class="row-even"><td><p>ptprofilesim_sensitivity.py</p></td>
+<td><p>Perform a PT Profile simulation sensitivity study.</p></td>
+</tr>
+<tr class="row-odd"><td><p>ptprofilesim_multipoint.py</p></td>
+<td><p>Perform a PT Profile simulation using multipointing.</p></td>
+</tr>
+<tr class="row-even"><td><p>read_catalog.py</p></td>
+<td><p>Update an ESP from the catalog.</p></td>
+</tr>
+<tr class="row-odd"><td><p>run_all.py</p></td>
+<td><p>Run all the examples.</p></td>
+</tr>
+<tr class="row-even"><td><p>systemanalysis_sensitivity_customvariable.py</p></td>
+<td><p>Perform a System analysis simulation with sensitivity and custom variable.</p></td>
+</tr>
+<tr class="row-odd"><td><p>systemanalysissim_run_simulation.py</p></td>
+<td><p>Perform a System analysis simulation.</p></td>
+</tr>
+<tr class="row-even"><td><p>validation_<span class="highlighted">model</span>.py</p></td>
+<td><p>Validates the <span class="highlighted">model</span> for possible issues.</p></td>
+</tr>
+<tr class="row-odd"><td><p>validation_network_opt_sim.py</p></td>
+<td><p>Validates the <span class="highlighted">model</span> and optimization task for possible issues.</p></td>
+</tr>
+<tr class="row-even"><td><p>validation_networksim.py</p></td>
+<td><p>Validates the <span class="highlighted">model</span> and networksim task for possible issues.</p></td>
+</tr>
+<tr class="row-odd"><td><p>validation_nodal_sim.py</p></td>
+<td><p>Validates the <span class="highlighted">model</span> and nodal analysis task for possible issues.</p></td>
+</tr>
+<tr class="row-even"><td><p>validation_ptprofile_sim.py</p></td>
+<td><p>Validates the <span class="highlighted">model</span> and PT profile task for possible issues.</p></td>
+</tr>
+<tr class="row-odd"><td><p>vfp_tables_simulation_with_sensitivities.py</p></td>
+<td><p>Perform a vfp tables simulation with sensitivities.</p></td>
+</tr>
+<tr class="row-even"><td><p>well_export.py</p></td>
+<td><p>Export a well to a new PIPESIM <span class="highlighted">model</span>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>well_export_all.py</p></td>
+<td><p>Export all the wells to individual PIPESIM <span class="highlighted">model</span>s.</p></td>
+</tr>
+<tr class="row-even"><td><p>well_import.py</p></td>
+<td><p>Import a well into the PIPESIM <span class="highlighted">model</span>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>well_import_all.py</p></td>
+<td><p>Import multiple wells from a specified folder.</p></td>
+</tr>
+<tr class="row-even"><td><p>wellperformancecurvessim_run_simulation.py</p></td>
+<td><p>Perform a Well performance curves simulation.</p></td>
+</tr>
+<tr class="row-odd"><td><p>worker_thread_test.xlsx</p></td>
+<td><p>Excel workbook with xl_worker_thread, xl_main_thread macros.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="case-studies">
+<h2>Case Studies<a class="headerlink" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/examples.html?highlight=model#case-studies" title="Permalink to this heading">¶</a></h2>
+<p>The following Case Studies are included with the PIPESIM Python Toolkit.</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Case Study</strong></p></th>
+<th class="head"><p><strong>Complexity</strong></p></th>
+<th class="head"><p><strong>Description</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Build Network <span class="highlighted">Model</span></p></td>
+<td><p>Complex</p></td>
+<td><p>Builds a network <span class="highlighted">model</span> from data in an Excel workbook.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Choke Manager</p></td>
+<td><p>Simple</p></td>
+<td><p>Uses Excel as a simple interface for updating choke parameters.</p></td>
+</tr>
+<tr class="row-even"><td><p>Daily Production</p></td>
+<td><p>Simple</p></td>
+<td><p>Runs simulations for each day of production data.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Export Flowline Geometries</p></td>
+<td><p>Simple</p></td>
+<td><p>Exports the flowline geometries from a <span class="highlighted">model</span>.</p></td>
+</tr>
+<tr class="row-even"><td><p>Excel Template</p></td>
+<td><p>Simple</p></td>
+<td><p>Template. Uses Excel as a simple interface to PIPESIM <span class="highlighted">model</span>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Gas Lift Diagnostics</p></td>
+<td><p>Moderate</p></td>
+<td><p>Uses Excel as a simple interface for running Gas Lift Diagnostics.</p></td>
+</tr>
+<tr class="row-even"><td><p>Gas Lift Optimizer</p></td>
+<td><p>Complex</p></td>
+<td><p>Uses Excel as a simple interface for gas lift optimizer network.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Gas Lift Performance</p></td>
+<td><p>Simple</p></td>
+<td><p>Uses Excel as a simple interface for running Gas Lift Performance.</p></td>
+</tr>
+<tr class="row-even"><td><p>GIS <span class="highlighted">Model</span> Conversion</p></td>
+<td><p>Complex</p></td>
+<td><p>Converts junctions into <span class="highlighted">model</span> components after a GIS shape file import.</p></td>
+</tr>
+<tr class="row-odd"><td><p>InjectionPoint manager</p></td>
+<td><p>Simple</p></td>
+<td><p>Uses Excel as a simple interface for updating injection point parameters.</p></td>
+</tr>
+<tr class="row-even"><td><p>Network Optimizer</p></td>
+<td><p>Complex</p></td>
+<td><p>Uses Excel as a simple interface for network optimizer for all control types (ESP, PCP, Gas Lift &amp; Choke).</p></td>
+</tr>
+<tr class="row-odd"><td><p>Network Simulation</p></td>
+<td><p>Moderate</p></td>
+<td><p>Uses Excel as a simple interface for network simulations.</p></td>
+</tr>
+<tr class="row-even"><td><p>Nodal Analysis</p></td>
+<td><p>Complex</p></td>
+<td><p>Uses Excel as a simple interface for nodal analysis simulations.</p></td>
+</tr>
+<tr class="row-odd"><td><p>PT Profile Simulation</p></td>
+<td><p>Moderate</p></td>
+<td><p>Uses Excel as a simple interface for PT Profile simulations.</p></td>
+</tr>
+<tr class="row-even"><td><p>Slug Catcher Sizing</p></td>
+<td><p>Moderate</p></td>
+<td><p>Performs multiple simulations for a slug catcher sizing study.</p></td>
+</tr>
+<tr class="row-odd"><td><p>SpotReport manager</p></td>
+<td><p>Simple</p></td>
+<td><p>Uses Excel as a simple interface for updating spot report parameters.</p></td>
+</tr>
+<tr class="row-even"><td><p>System Analysis</p></td>
+<td><p>Moderate</p></td>
+<td><p>Uses Excel as a simple interface for running system analysis.</p></td>
+</tr>
+<tr class="row-odd"><td><p>VFP simulation</p></td>
+<td><p>Moderate</p></td>
+<td><p>Perform multiple VFP tables generation based on individually predefined parameters.</p></td>
+</tr>
+<tr class="row-even"><td><p>Well <span class="highlighted">Model</span> Management</p></td>
+<td><p>Simple</p></td>
+<td><p>Imports and exports individual well <span class="highlighted">model</span>s from a network model.</p></td>
+</tr>
+</tbody>
+</table>
+<section id="build-network-model">
+<h3>Build Network <span class="highlighted">Model</span><a class="headerlink" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/examples.html?highlight=model#build-network-model" title="Permalink to this heading">¶</a></h3>
+<p>The data for a PIPESIM <span class="highlighted">model</span> can come from many different sources. Typically
+this is available in a database, or in a document such as Excel workbook.</p>
+<p>In this case study the <span class="highlighted">model</span> data  has been provided in a formatted Excel
+workbook. The script reads the workbook and automatically builds the
+PIPESIM model from the data. The user can update the parameterization,
+add or remove model components, and change the specified parameters in the
+workbook without needing to edit the script. The final model is opened in
+the PIPESIM UI for verification and review.</p>
+</section>
+<section id="choke-manager">
+<h3>Choke manager<a class="headerlink" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/examples.html?highlight=model#choke-manager" title="Permalink to this heading">¶</a></h3>
+<p>PIPESIM network <span class="highlighted">model</span> may contains many chokes in wells and network. In user
+interface user must edit choke parameters one by one. Excel can be used as a
+simple interface to control parameters of all choke at one table.</p>
+<p>This case study demonstrates how to read list of chokes from <span class="highlighted">model</span>, get current
+parameters and update values.</p>
+</section>
+<section id="daily-production">
+<h3>Daily Production<a class="headerlink" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/examples.html?highlight=model#daily-production" title="Permalink to this heading">¶</a></h3>
+<p>PIPESIM is sometimes used for production allocation and product metering
+verification. In these situations some of the production data is used as
+the boundaries in the PIPESIM <span class="highlighted">model</span>, with the remaining data compared to
+the PIPESIM simulation results.</p>
+<p>The case study takes field data and runs the PIPESIM <span class="highlighted">model</span> using
+these as boundary conditions. The PIPESIM results are provided to
+compare with the field flow rates. This will highlight discrepancies
+in meter allocation, model calibration, or differences due to
+flow assurance issues.</p>
+</section>
+<section id="excel-template">
+<h3>Excel Template<a class="headerlink" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/examples.html?highlight=model#excel-template" title="Permalink to this heading">¶</a></h3>
+<p>Template of Excel-PIPESIM link. The case study demonstrates how to get
+<span class="highlighted">model</span> description.</p>
+</section>
+<section id="export-flowline-geometries">
+<h3>Export Flowline Geometries<a class="headerlink" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/examples.html?highlight=model#export-flowline-geometries" title="Permalink to this heading">¶</a></h3>
+<p>The GIS feature in PIPESIM provides elevation data capture from online data
+sources. After capturing the elevation data the profile is often needed in
+other documents such as reports and calculations.</p>
+</section>
+<section id="gas-lift-diagnostics">
+<h3>Gas Lift Diagnostics<a class="headerlink" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/examples.html?highlight=model#gas-lift-diagnostics" title="Permalink to this heading">¶</a></h3>
+<p>Gas Lift Diagnostcs is one of the important features in PIPESIM that allows
+engineers and operators analyze the impact of various production operation
+conditions on the performance and status of Gas Lift valves installed in the
+well.</p>
+<p>The case study demonstrates how to check whether you can open (connect to)
+the <span class="highlighted">model</span>, set simulation conditions and run the Gas Lift Diagnostcs task.
+Once the task is completed, the status of each gas lift valve in displayed,
+in addition to the gas rate passing through each valve.</p>
+</section>
+<section id="gas-lift-optimizer">
+<h3>Gas Lift Optimizer<a class="headerlink" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/examples.html?highlight=model#gas-lift-optimizer" title="Permalink to this heading">¶</a></h3>
+<p>Excel can be used as simplified user interface for running PIPESIM gas lift
+network optimizer simulations. Pertinent data can be exposed and updated
+without danger of the user damaging the underlying PIPESIM <span class="highlighted">model</span>.</p>
+<p>Boundary conditions, Initial conditions, Dual strings, Local constraints &amp;
+Optimization parameters can be updated, simulations performed, and the
+results reviewed.</p>
+</section>
+<section id="gas-lift-performance">
+<h3>Gas Lift Performance<a class="headerlink" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/examples.html?highlight=model#gas-lift-performance" title="Permalink to this heading">¶</a></h3>
+<p>PIPEISIM provide a powerful simulation capability to <span class="highlighted">model</span> well performance
+with Gas Lift system installation. Based on casing injection pressure, gas
+density and hydraulic calculations, PIPIESIM will identify the operating
+valves and calculate well production flow rate at different surface gas lift
+injection rates.</p>
+<p>The case study simplifies <span class="highlighted">model</span>ing the Gas Lift performance simuation and allows
+changing boundary conditions and Gas Lift rates, running well performance and
+then plotting the Gas Lift performance curve in Excel.</p>
+</section>
+<section id="gis-model-conversion">
+<h3>GIS <span class="highlighted">Model</span> Conversion<a class="headerlink" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/examples.html?highlight=model#gis-model-conversion" title="Permalink to this heading">¶</a></h3>
+<p>PIPESIM can import GIS shape files to automatically lay out the flowlines and
+junctions. After import, the junctions can be converted to the equipment that
+exists in the field, such as well, sources and sinks.</p>
+<p>This case study takes a PIPESIM <span class="highlighted">model</span> file created from a shape file import
+and uses Excel data to do a search and replace on the model components. The
+components are matched against the latitude and longitude of the junctions.</p>
+<p>The script is run from the desktop or through an interative Python window.
+While it reads the Excel workbook, it demonstrates that scripts do not need
+to be embedded in order to interact with Excel.</p>
+</section>
+<section id="injectionpoint-manager">
+<h3>InjectionPoint manager<a class="headerlink" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/examples.html?highlight=model#injectionpoint-manager" title="Permalink to this heading">¶</a></h3>
+<p>PIPESIM network <span class="highlighted">model</span> may contains many injection points in both wells and network.
+In user interface user must edit injection point parameters (fluid, rate, temperature)
+one by one. Excel can be used as a simple interface to control parameters of all
+injection points at one table.</p>
+<p>This case study demonstrates how to read list of injection points from <span class="highlighted">model</span>, get
+current parameters and update values.</p>
+</section>
+<section id="network-optimizer">
+<h3>Network Optimizer<a class="headerlink" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/examples.html?highlight=model#network-optimizer" title="Permalink to this heading">¶</a></h3>
+<p>Excel can be used as simplified user interface for running PIPESIM network
+optimizer simulations. Pertinent data can be exposed and updated without
+danger of the user damaging the underlying PIPESIM <span class="highlighted">model</span>.</p>
+<p>Boundary conditions, Initial conditions, Local constraints &amp; Optimization
+parameters can be updated, simulations performed, and the results reviewed.</p>
+</section>
+<section id="network-simulation">
+<h3>Network Simulation<a class="headerlink" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/examples.html?highlight=model#network-simulation" title="Permalink to this heading">¶</a></h3>
+<p>Excel can be used as simplified user interface for running PIPESIM network
+simulations. Pertinent data can be exposed and updated without danger of the
+user damaging the underlying PIPESIM <span class="highlighted">model</span>. Boundary conditions and equipment
+data can be updated, simulations performed, and the results reviewed.</p>
+<p>This case study uses Excel as an interface for performing network simulations.
+The boundary conditions and specific equipment data is exposed for user
+updates. The simulation can be run and results retrieved for analysis.</p>
+</section>
+<section id="nodal-analysis">
+<h3>Nodal Analysis<a class="headerlink" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/examples.html?highlight=model#nodal-analysis" title="Permalink to this heading">¶</a></h3>
+<p>Excel can be used as simplified user interface for running PIPESIM nodal analysis
+simulations. Pertinent data can be exposed and updated without danger of the user
+damaging the underlying PIPESIM <span class="highlighted">model</span>. Boundary conditions and equipment data can
+be updated, simulations performed, and the results reviewed.</p>
+<p>This case study uses Excel as an interface for performing batch nodal analysis
+simulations. The boundary conditions is exposed for user updates, the simulation
+run and results retrieved for visualization and analysis.</p>
+</section>
+<section id="pt-profile-simulation">
+<h3>PT Profile Simulation<a class="headerlink" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/examples.html?highlight=model#pt-profile-simulation" title="Permalink to this heading">¶</a></h3>
+<p>Excel can be used as simplified user interface for running PIPESIM PT profile
+simulations. Pertinent data can be exposed and updated without danger of the
+user damaging the underlying PIPESIM <span class="highlighted">model</span>. Boundary conditions and equipment
+data can be updated, simulations performed, and the results reviewed.</p>
+<p>This case study uses Excel as an interface for performing PT Profile
+simulations. The boundary conditions is exposed for user updates, the
+simulation run and results retrieved for analysis.</p>
+</section>
+<section id="slug-catcher-sizing-study">
+<h3>Slug Catcher Sizing Study<a class="headerlink" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/examples.html?highlight=model#slug-catcher-sizing-study" title="Permalink to this heading">¶</a></h3>
+<p>PIPESIM is often used on projects during the concept and front end
+engineering design (FEED) phases for equipment sizing.</p>
+<p>In this use case, a parametric study is performed on a PIPESIM <span class="highlighted">model</span> to
+determine the size of a slug catcher at an onshore receiving facility. It
+varies the flow correlation, Equation of State and liquid / gas ratio for
+pigging and ramp up scenarios. It is based on the paper presented at
+Pipeline Simulation Interest Group, PSIG1603.</p>
+</section>
+<section id="spotreport-manager">
+<h3>SpotReport manager<a class="headerlink" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/examples.html?highlight=model#spotreport-manager" title="Permalink to this heading">¶</a></h3>
+<p>PIPESIM network <span class="highlighted">model</span> may contains many spot reports with different options.
+Excel can be used as a simple interface to control parameters of all reports
+at one table.</p>
+<p>This case study demonstrates how to read list of spotreport from <span class="highlighted">model</span>,
+get current options and update values.</p>
+</section>
+<section id="system-analysis">
+<h3>System Analysis<a class="headerlink" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/examples.html?highlight=model#system-analysis" title="Permalink to this heading">¶</a></h3>
+<p>This case study uses Excel as an interface for running PIPESIM system
+analysis simulations. Pertinent data can be exposed and updated without
+danger of the user damaging the underlying PIPESIM <span class="highlighted">model</span>. Boundary
+conditions can be updated, simulations performed, and oil rate given
+different operation condidtion is estimated.</p>
+</section>
+<section id="vfp-simulation">
+<h3>VFP simulation<a class="headerlink" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/examples.html?highlight=model#vfp-simulation" title="Permalink to this heading">¶</a></h3>
+<p>This case study uses Excel as an interface for performing VFP tables generation.
+Current well operation conditions can be received from Network simulation task.
+Table template allows to setup VFP task parameters for all wells simultaneously or
+specify unique parameters for each well. The ready VFP tables are stored in temporary
+folder specified by user.</p>
+</section>
+<section id="well-model-management">
+<h3>Well <span class="highlighted">Model</span> Management<a class="headerlink" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/examples.html?highlight=model#well-model-management" title="Permalink to this heading">¶</a></h3>
+<p>A use case for <span class="highlighted">model</span> management is to model wells individually and to import
+them into a single PIPESIM file for a network simulation. It allows you to
+maintain individual well models, while being able to easily run
+a single large network simulation.</p>
+<p>This case study provides an Excel interface for managing the well <span class="highlighted">model</span>s. It
+will export all the wells in a PIPESIM model to individual files and import
+them again on the click of a button. The well names in the model are also
+listed.</p>
+</section>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/index.html">
+              <img class="logo" src="./Example Code — PIPESIM Python Toolkit 2023.1 documentation_files/PIPESIM.png" alt="Logo">
+            </a></p>
+  <div>
+    <h3><a href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/examples.html?highlight=model#">Example Code</a><ul>
+<li><a class="reference internal" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/examples.html?highlight=model#example-scripts">Example Scripts</a></li>
+<li><a class="reference internal" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/examples.html?highlight=model#case-studies">Case Studies</a><ul>
+<li><a class="reference internal" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/examples.html?highlight=model#build-network-model">Build Network Model</a></li>
+<li><a class="reference internal" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/examples.html?highlight=model#choke-manager">Choke manager</a></li>
+<li><a class="reference internal" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/examples.html?highlight=model#daily-production">Daily Production</a></li>
+<li><a class="reference internal" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/examples.html?highlight=model#excel-template">Excel Template</a></li>
+<li><a class="reference internal" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/examples.html?highlight=model#export-flowline-geometries">Export Flowline Geometries</a></li>
+<li><a class="reference internal" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/examples.html?highlight=model#gas-lift-diagnostics">Gas Lift Diagnostics</a></li>
+<li><a class="reference internal" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/examples.html?highlight=model#gas-lift-optimizer">Gas Lift Optimizer</a></li>
+<li><a class="reference internal" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/examples.html?highlight=model#gas-lift-performance">Gas Lift Performance</a></li>
+<li><a class="reference internal" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/examples.html?highlight=model#gis-model-conversion">GIS Model Conversion</a></li>
+<li><a class="reference internal" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/examples.html?highlight=model#injectionpoint-manager">InjectionPoint manager</a></li>
+<li><a class="reference internal" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/examples.html?highlight=model#network-optimizer">Network Optimizer</a></li>
+<li><a class="reference internal" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/examples.html?highlight=model#network-simulation">Network Simulation</a></li>
+<li><a class="reference internal" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/examples.html?highlight=model#nodal-analysis">Nodal Analysis</a></li>
+<li><a class="reference internal" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/examples.html?highlight=model#pt-profile-simulation">PT Profile Simulation</a></li>
+<li><a class="reference internal" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/examples.html?highlight=model#slug-catcher-sizing-study">Slug Catcher Sizing Study</a></li>
+<li><a class="reference internal" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/examples.html?highlight=model#spotreport-manager">SpotReport manager</a></li>
+<li><a class="reference internal" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/examples.html?highlight=model#system-analysis">System Analysis</a></li>
+<li><a class="reference internal" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/examples.html?highlight=model#vfp-simulation">VFP simulation</a></li>
+<li><a class="reference internal" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/examples.html?highlight=model#well-model-management">Well Model Management</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/excel.html" title="previous chapter">Working with Excel</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/troubleshooting.html" title="next chapter">Troubleshooting</a></p>
+  </div>
+<div id="searchbox" style="display: block;" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+      <input type="submit" value="Go">
+    </form>
+    </div>
+<p class="highlight-link"><a href="javascript:Documentation.hideSearchWords()">Hide Search Matches</a></p></div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/py-modindex.html" title="Python Module Index">modules</a> |</li>
+        <li class="right">
+          <a href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/troubleshooting.html" title="Troubleshooting">next</a> |</li>
+        <li class="right">
+          <a href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/excel.html" title="Working with Excel">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/index.html">PIPESIM Python Toolkit 2023.1 documentation</a> »</li>
+        <li class="nav-item nav-item-this"><a href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/examples.html?highlight=model">Example Code</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        © Copyright 2023, Schlumberger.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
+    </div>
+  
+</body></html>

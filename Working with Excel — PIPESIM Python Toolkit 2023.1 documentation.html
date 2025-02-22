@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<!-- saved from url=(0104)file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/excel.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/">
+
+    <title>Working with Excel — PIPESIM Python Toolkit 2023.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="./Working with Excel — PIPESIM Python Toolkit 2023.1 documentation_files/pygments.css">
+    <link rel="stylesheet" type="text/css" href="./Working with Excel — PIPESIM Python Toolkit 2023.1 documentation_files/bizstyle.css">
+    
+    <script data-url_root="./" id="documentation_options" src="./Working with Excel — PIPESIM Python Toolkit 2023.1 documentation_files/documentation_options.js.download"></script>
+    <script src="./Working with Excel — PIPESIM Python Toolkit 2023.1 documentation_files/jquery.js.download"></script>
+    <script src="./Working with Excel — PIPESIM Python Toolkit 2023.1 documentation_files/underscore.js.download"></script>
+    <script src="./Working with Excel — PIPESIM Python Toolkit 2023.1 documentation_files/_sphinx_javascript_frameworks_compat.js.download"></script>
+    <script src="./Working with Excel — PIPESIM Python Toolkit 2023.1 documentation_files/doctools.js.download"></script>
+    <script src="./Working with Excel — PIPESIM Python Toolkit 2023.1 documentation_files/bizstyle.js.download"></script>
+    <link rel="index" title="Index" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/genindex.html">
+    <link rel="search" title="Search" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/search.html">
+    <link rel="next" title="Example Code" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/examples.html">
+    <link rel="prev" title="Quick Start" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!--[if lt IE 9]>
+    <script src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/py-modindex.html" title="Python Module Index">modules</a> |</li>
+        <li class="right">
+          <a href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/examples.html" title="Example Code" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html" title="Quick Start" accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/index.html">PIPESIM Python Toolkit 2023.1 documentation</a> »</li>
+        <li class="nav-item nav-item-this"><a href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/excel.html">Working with Excel</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="working-with-excel">
+<h1>Working with Excel<a class="headerlink" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/excel.html#working-with-excel" title="Permalink to this heading">¶</a></h1>
+<p>Python has many libraries for working with Excel. PIPESIM Python Toolkit uses
+<a class="reference external" href="http://xlwings.org/">xlwings</a> that makes reading and writing Escel worksheet easy. Scripts can read and write data, format sheets,
+and be assigned to VBA features such as buttons.</p>
+<section id="interacting-with-excel">
+<h2>Interacting with Excel<a class="headerlink" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/excel.html#interacting-with-excel" title="Permalink to this heading">¶</a></h2>
+<p>Reading and writing Excel ranges is done through the xlwings Python module,
+often abbreviated to xw. The following examples are provided for information
+with many more methods and features available in xlwings. See the <a class="reference external" href="http://docs.xlwings.org/en/stable/quickstart.html">xlwings documentation</a>
+for more help.</p>
+<p>Reading and writing tabulated data formats are subject to the following considerations:</p>
+<ul class="simple">
+<li><p>Pandas DataFrames can be written to Excel.</p></li>
+<li><p>Lists of lists or dictionaries cannot be written to Excel (as of xlwings 0.17.1).</p></li>
+<li><p>To read tabulated data formats from Excel you must use the utility functions
+provided in the PIPESIM Python Toolkit (see section below) for converting the
+lists of lists into DataFrames and dictionaries.</p></li>
+</ul>
+<p>The PIPESIM Python Toolkit allows scripts to be called from
+workbooks, but any script can interact with Excel workbooks. The interactive
+Python command line is typically the easiest way to try out code.</p>
+<p>Open a new workbook:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">xlwings</span> <span class="k">as</span> <span class="nn">xw</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">app</span> <span class="o">=</span> <span class="n">xw</span><span class="o">.</span><span class="n">App</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Current workbook and worksheet:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">bk</span> <span class="o">=</span> <span class="n">xw</span><span class="o">.</span><span class="n">books</span><span class="o">.</span><span class="n">active</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sht</span> <span class="o">=</span> <span class="n">bk</span><span class="o">.</span><span class="n">sheets</span><span class="o">.</span><span class="n">active</span>
+</pre></div>
+</div>
+<p>Activate a worksheet:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">bk</span><span class="o">.</span><span class="n">sheets</span><span class="p">(</span><span class="s1">'Sheet1'</span><span class="p">)</span><span class="o">.</span><span class="n">activate</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Writing to a cell:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">xw</span><span class="o">.</span><span class="n">Range</span><span class="p">(</span><span class="s1">'A1'</span><span class="p">)</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="s1">'Hello world'</span>
+</pre></div>
+</div>
+<p>Reading from a cell:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">value</span> <span class="o">=</span> <span class="n">xw</span><span class="o">.</span><span class="n">Range</span><span class="p">(</span><span class="s1">'A1'</span><span class="p">)</span><span class="o">.</span><span class="n">value</span>
+</pre></div>
+</div>
+<p>Writing a DataFrame to a cell</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">xw</span><span class="o">.</span><span class="n">Range</span><span class="p">(</span><span class="s1">'B4'</span><span class="p">)</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">geometry_df</span>
+</pre></div>
+</div>
+<p>Reading a range and converting to DataFrame</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Automatically determine the table from the top left cell</span>
+<span class="n">values</span> <span class="o">=</span> <span class="n">xw</span><span class="o">.</span><span class="n">Range</span><span class="p">(</span><span class="s1">'B4'</span><span class="p">)</span><span class="o">.</span><span class="n">expand</span><span class="p">()</span><span class="o">.</span><span class="n">value</span>
+<span class="c1"># Or specify the top left and bottom right cells</span>
+<span class="n">values</span> <span class="o">=</span> <span class="n">xw</span><span class="o">.</span><span class="n">Range</span><span class="p">(</span><span class="s1">'B4'</span><span class="p">,</span> <span class="s1">'G7'</span><span class="p">)</span><span class="o">.</span><span class="n">value</span>
+<span class="kn">from</span> <span class="nn">sixgill.utilities</span> <span class="kn">import</span> <span class="n">range_to_dataframe</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">range_to_dataframe</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="call-python-scripts-from-excel">
+<h2>Call Python Scripts from Excel<a class="headerlink" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/excel.html#call-python-scripts-from-excel" title="Permalink to this heading">¶</a></h2>
+<p>You can call Python scripts from Excel workbooks and assign python methods to
+VBA features like a button.</p>
+<section id="client-server-architecture">
+<h3>Client-server architecture<a class="headerlink" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/excel.html#client-server-architecture" title="Permalink to this heading">¶</a></h3>
+<p>The new way of communication between Excel and Python Toolkit based on client-server
+architecture and includes at least 4 elements:</p>
+<ul class="simple">
+<li><p>Excel document: user interface or data store during data exchange with PIPESIM model.</p></li>
+<li><p>Logic.py: script implements logic of data exchange with PIPESIM model.</p></li>
+<li><p>Server.py: sever script. Listen port and process message from it.</p></li>
+<li><p>Client.py: client script. Connect to server and send message (command).</p></li>
+</ul>
+<p>Excel document calls logic.py script to connect with Python Toolkit and sends command to server using
+client.py script by user request.
+Logic.py runs server.py script and processes client requests.</p>
+<figure class="align-center" style="width: 80%">
+<a class="reference internal image-reference" href="./Working with Excel — PIPESIM Python Toolkit 2023.1 documentation_files/Client_server.png"><img alt="_images/Client_server.png" src="./Working with Excel — PIPESIM Python Toolkit 2023.1 documentation_files/Client_server.png" style="width: 80%;"></a>
+</figure>
+<p>Client and server uses any available port which is identified automatically.
+By default, all scripts must be placed in one folder with Excel document.
+They also may be stored in separate folder _CommonScripts one level up (see
+folders structure in Case Studies)</p>
+</section>
+<section id="excel-document">
+<h3>Excel document<a class="headerlink" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/excel.html#excel-document" title="Permalink to this heading">¶</a></h3>
+<p>Excel document includes several VBA functions in module <strong>Module_Functions</strong> which allow to
+establish connection with Python script and send command:</p>
+<ul class="simple">
+<li><p>ExecuteServerScript: connects to python script. Run logic script which starts server.</p></li>
+<li><p>ExecuteCommand: send command to python script.</p></li>
+<li><p>PopulatePythonDirectory: receive paths of existing python installation and fill python folder dropdown list.</p></li>
+<li><p>Other python directory related functions</p></li>
+</ul>
+<p>User must select PIPESIM PTK path in dropdown list to execute script correctly. All functions use named ranges
+for navigation.</p>
+<p>Excel document must contain at least 2 sheets:</p>
+<ul class="simple">
+<li><p>Introduction: sheet contains named ranges</p>
+<ul>
+<li><p>PortNumber: port number</p></li>
+<li><p>InstalledPython: list of python installations</p></li>
+</ul>
+</li>
+<li><p>Model: sheet contains named ranges</p>
+<ul>
+<li><p>PythonFolder: drop down list of python installations</p></li>
+<li><p>ModelFolder: place of store PIPESIM model and python scripts (logis.py, server.py, client.py)</p></li>
+<li><p>ModelFile: name of PIPESIM model</p></li>
+</ul>
+</li>
+</ul>
+<p>Excel document must contain at least 2 form controls (button):</p>
+<ul class="simple">
+<li><p>Connect with python script</p></li>
+<li><p>Command</p></li>
+</ul>
+<p>Since Python Toolkit may be installed in any folder, the python installation path may be different.
+When Excel document is transferred between computers, the python installation path must be updated
+accordingly. To simplify path selection/update, the automatic process is implemented in the
+Workbook_Open() method of ThisWorkbook object.</p>
+</section>
+<section id="call-python-script-from-excel">
+<h3>Call python script from Excel<a class="headerlink" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/excel.html#call-python-script-from-excel" title="Permalink to this heading">¶</a></h3>
+<p>Execute following steps to create a link between Excel and python script</p>
+<ul class="simple">
+<li><p>Use Excel Template from Case StudiesPython Toolkit</p></li>
+<li><p>Add new button in Excel and assign new function to it</p></li>
+<li><p>Use following VBA code sending command Function_1 to script</p></li>
+<li><p>Add your code in logic.py script as a my_code() method</p></li>
+<li><p>Edit handlerMessage method in logic.py script</p>
+<ul>
+<li><p>Rename message get_test to function_1</p></li>
+<li><p>Replace get_test() method to my_code()</p></li>
+</ul>
+</li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">handleMessage</span><span class="p">(</span><span class="n">message</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">message</span> <span class="o">==</span> <span class="s1">'get_info'</span><span class="p">:</span>
+        <span class="n">get_info</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">""</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">'Information received'</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">True</span>
+
+    <span class="k">elif</span> <span class="n">message</span> <span class="o">==</span> <span class="s1">'get_test'</span><span class="p">:</span>
+        <span class="n">get_test</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">""</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">'Test finished'</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">True</span>
+
+    <span class="k">return</span> <span class="kc">False</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="utility-functions">
+<h2>Utility Functions<a class="headerlink" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/excel.html#utility-functions" title="Permalink to this heading">¶</a></h2>
+<p>The PIPESIM Python Toolkit includes utility functions for working with Excel.</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Method</strong></p></th>
+<th class="head"><p><strong>Description</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>active_sheet()</p></td>
+<td><p>Return the currently active Excel worksheet</p></td>
+</tr>
+<tr class="row-odd"><td><p>current_folder()</p></td>
+<td><p>Return the folder (path) to the currently open Excel workbook.</p></td>
+</tr>
+<tr class="row-even"><td><p>get_model_session()</p></td>
+<td><p>Get the model associated with the workbook, opening it if necessary</p></td>
+</tr>
+<tr class="row-odd"><td><p>range_to_dataframe()</p></td>
+<td><p>Convert an Excel range to a Pandas DataFrame</p></td>
+</tr>
+<tr class="row-even"><td><p>range_to_dictionary()</p></td>
+<td><p>Convert an Excel range to a dictionary</p></td>
+</tr>
+<tr class="row-odd"><td><p>worksheet_last_row()</p></td>
+<td><p>Return the last row of the worksheet</p></td>
+</tr>
+<tr class="row-even"><td><p>worksheet_last_column()</p></td>
+<td><p>Return the last column of the worksheet</p></td>
+</tr>
+</tbody>
+</table>
+<section id="returning-the-currently-active-excel-worksheet">
+<h3>Returning the currently active Excel worksheet<a class="headerlink" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/excel.html#returning-the-currently-active-excel-worksheet" title="Permalink to this heading">¶</a></h3>
+<p>To return the currently active sheet object, follow this example:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sixgill.utilities</span> <span class="kn">import</span> <span class="n">active_sheet</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sht</span> <span class="o">=</span> <span class="n">active_sheet</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="returning-the-excel-workbook-folder">
+<h3>Returning the Excel workbook folder<a class="headerlink" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/excel.html#returning-the-excel-workbook-folder" title="Permalink to this heading">¶</a></h3>
+<p>The Python variable __file__ returns the script location, but this is not
+the same as the Excel workbook folder. The current_folder()
+method returns the folder of the Excel workbook.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sixgill.utilities</span> <span class="kn">import</span> <span class="n">current_folder</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">workbook_folder</span> <span class="o">=</span> <span class="n">current_folder</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="get-the-model-associated-with-the-workbook">
+<h3>Get the model associated with the workbook<a class="headerlink" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/excel.html#get-the-model-associated-with-the-workbook" title="Permalink to this heading">¶</a></h3>
+<p>Where spreadsheets have several functions that operate on models, the
+get_model_session() method can handle connections to the required models.
+It will open the model, if necessary, or simply pass back the
+model object if it is already open.</p>
+<p>In the following example, a user can
+run readparameters(), writeparameters() and savemodel() and the opening
+of the model is handled automatically:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sixgill.utilities</span> <span class="kn">import</span> <span class="n">get_active_session</span>
+<span class="n">model_filename</span> <span class="o">=</span> <span class="s1">'C:/temp/mymodel.pips'</span>
+
+<span class="k">def</span> <span class="nf">readparameters</span><span class="p">():</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">get_model_session</span><span class="p">(</span><span class="n">model_filename</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">get_values</span><span class="p">(</span><span class="s2">"Well"</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">writeparameters</span><span class="p">():</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">get_model_session</span><span class="p">(</span><span class="n">model_filename</span><span class="p">)</span>
+    <span class="n">new_param</span> <span class="o">=</span> <span class="n">range_to_dictionary</span><span class="p">(</span><span class="n">xw</span><span class="o">.</span><span class="n">Range</span><span class="p">(</span><span class="s1">'B4'</span><span class="p">)</span><span class="o">.</span><span class="n">expand</span><span class="p">()</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">set_values</span><span class="p">(</span><span class="n">new_param</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">savemodel</span><span class="p">():</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">get_model_session</span><span class="p">(</span><span class="n">model_filename</span><span class="p">)</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Further examples for get_model_session() can be found in the PIPESIM
+Python Toolkit Case Studies.</p>
+</section>
+<section id="convert-an-excel-range-to-a-pandas-dataframe">
+<h3>Convert an Excel range to a Pandas DataFrame<a class="headerlink" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/excel.html#convert-an-excel-range-to-a-pandas-dataframe" title="Permalink to this heading">¶</a></h3>
+<p>Use this for passing PIPESIM tabulated data such as
+trajectories, geometries, and such.</p>
+<p>To convert the list of lists read in from an Excel range into a Pandas
+DataFrame, follow this example:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sixgill.utilities</span> <span class="kn">import</span> <span class="n">range_to_dataframe</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">geometry</span> <span class="o">=</span> <span class="n">xw</span><span class="o">.</span><span class="n">Range</span><span class="p">(</span><span class="s1">'B4'</span><span class="p">)</span><span class="o">.</span><span class="n">expand</span><span class="p">()</span><span class="o">.</span><span class="n">value</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">range_to_dataframe</span><span class="p">(</span><span class="n">geometry</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="convert-an-excel-range-to-a-dictionary">
+<h3>Convert an Excel range to a dictionary<a class="headerlink" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/excel.html#convert-an-excel-range-to-a-dictionary" title="Permalink to this heading">¶</a></h3>
+<p>Use this for handling tabulated data such a boundary conditions.</p>
+<p>To convert the list of lists read in from an Excel range into a Python
+dictionary, follow this example:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sixgill.utilities</span> <span class="kn">import</span> <span class="n">range_to_dictionary</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bc</span> <span class="o">=</span> <span class="n">xw</span><span class="o">.</span><span class="n">Range</span><span class="p">(</span><span class="s1">'B4'</span><span class="p">)</span><span class="o">.</span><span class="n">expand</span><span class="p">()</span><span class="o">.</span><span class="n">value</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">range_to_dictionary</span><span class="p">(</span><span class="n">bc</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="get-the-address-of-the-last-cell-of-the-worksheet">
+<h3>Get the address of the last cell of the worksheet<a class="headerlink" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/excel.html#get-the-address-of-the-last-cell-of-the-worksheet" title="Permalink to this heading">¶</a></h3>
+<p>The worksheet_last_row() returns the last row with data in it. Likewise,
+worksheet_last_column() returns the last column with data.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sixgill.utilities</span> <span class="kn">import</span> <span class="n">worksheet_last_row</span><span class="p">,</span> <span class="n">worksheet_last_column</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">last_row</span> <span class="o">=</span> <span class="n">worksheet_last_row</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">last_column</span> <span class="o">=</span> <span class="n">worksheet_last_column</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>They optionally take a specified worksheet name:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">last_row</span> <span class="o">=</span> <span class="n">worksheet_last_row</span><span class="p">(</span><span class="s2">"ModelData"</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">last_column</span> <span class="o">=</span> <span class="n">worksheet_last_column</span><span class="p">(</span><span class="s2">"ModelData"</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/index.html">
+              <img class="logo" src="./Working with Excel — PIPESIM Python Toolkit 2023.1 documentation_files/PIPESIM.png" alt="Logo">
+            </a></p>
+  <div>
+    <h3><a href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/excel.html#">Working with Excel</a><ul>
+<li><a class="reference internal" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/excel.html#interacting-with-excel">Interacting with Excel</a></li>
+<li><a class="reference internal" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/excel.html#call-python-scripts-from-excel">Call Python Scripts from Excel</a><ul>
+<li><a class="reference internal" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/excel.html#client-server-architecture">Client-server architecture</a></li>
+<li><a class="reference internal" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/excel.html#excel-document">Excel document</a></li>
+<li><a class="reference internal" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/excel.html#call-python-script-from-excel">Call python script from Excel</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/excel.html#utility-functions">Utility Functions</a><ul>
+<li><a class="reference internal" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/excel.html#returning-the-currently-active-excel-worksheet">Returning the currently active Excel worksheet</a></li>
+<li><a class="reference internal" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/excel.html#returning-the-excel-workbook-folder">Returning the Excel workbook folder</a></li>
+<li><a class="reference internal" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/excel.html#get-the-model-associated-with-the-workbook">Get the model associated with the workbook</a></li>
+<li><a class="reference internal" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/excel.html#convert-an-excel-range-to-a-pandas-dataframe">Convert an Excel range to a Pandas DataFrame</a></li>
+<li><a class="reference internal" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/excel.html#convert-an-excel-range-to-a-dictionary">Convert an Excel range to a dictionary</a></li>
+<li><a class="reference internal" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/excel.html#get-the-address-of-the-last-cell-of-the-worksheet">Get the address of the last cell of the worksheet</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html" title="previous chapter">Quick Start</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/examples.html" title="next chapter">Example Code</a></p>
+  </div>
+<div id="searchbox" style="display: block;" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+      <input type="submit" value="Go">
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/py-modindex.html" title="Python Module Index">modules</a> |</li>
+        <li class="right">
+          <a href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/examples.html" title="Example Code">next</a> |</li>
+        <li class="right">
+          <a href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/quickstart.html" title="Quick Start">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/index.html">PIPESIM Python Toolkit 2023.1 documentation</a> »</li>
+        <li class="nav-item nav-item-this"><a href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/excel.html">Working with Excel</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        © Copyright 2023, Schlumberger.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
+    </div>
+  
+</body></html>

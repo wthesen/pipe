@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<!-- saved from url=(0104)file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/intro.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/">
+
+    <title>Introduction — PIPESIM Python Toolkit 2023.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="./Introduction — PIPESIM Python Toolkit 2023.1 documentation_files/pygments.css">
+    <link rel="stylesheet" type="text/css" href="./Introduction — PIPESIM Python Toolkit 2023.1 documentation_files/bizstyle.css">
+    
+    <script data-url_root="./" id="documentation_options" src="./Introduction — PIPESIM Python Toolkit 2023.1 documentation_files/documentation_options.js.download"></script>
+    <script src="./Introduction — PIPESIM Python Toolkit 2023.1 documentation_files/jquery.js.download"></script>
+    <script src="./Introduction — PIPESIM Python Toolkit 2023.1 documentation_files/underscore.js.download"></script>
+    <script src="./Introduction — PIPESIM Python Toolkit 2023.1 documentation_files/_sphinx_javascript_frameworks_compat.js.download"></script>
+    <script src="./Introduction — PIPESIM Python Toolkit 2023.1 documentation_files/doctools.js.download"></script>
+    <script src="./Introduction — PIPESIM Python Toolkit 2023.1 documentation_files/bizstyle.js.download"></script>
+    <link rel="index" title="Index" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/genindex.html">
+    <link rel="search" title="Search" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/search.html">
+    <link rel="next" title="Changes From Previous Version" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/changes.html">
+    <link rel="prev" title="Overview" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/overview.html">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!--[if lt IE 9]>
+    <script src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/py-modindex.html" title="Python Module Index">modules</a> |</li>
+        <li class="right">
+          <a href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/changes.html" title="Changes From Previous Version" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/overview.html" title="Overview" accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/index.html">PIPESIM Python Toolkit 2023.1 documentation</a> »</li>
+        <li class="nav-item nav-item-this"><a href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/intro.html">Introduction</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="introduction">
+<h1>Introduction<a class="headerlink" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/intro.html#introduction" title="Permalink to this heading">¶</a></h1>
+<p>The PIPESIM Python Toolkit is a collection of Schlumberger proprietary and
+publicly available Python modules. It is deployed through a Python
+distribution from Anaconda, a third-party distributor, which includes
+data and scientific Python modules, such as Numpy, SciPy and pandas. Python
+Toolkit installation package also contains VSCodium. It is a community-driven,
+freely licensed binary distribution of Microsoft’s editor VSCode. You can
+easily download additional Python modules using VSCodium or conda.</p>
+<p>This User Guide documents the usage of the PIPESIM Python Toolkit. It includes
+reference documentation for the Schlumberger proprietary modules with
+introductions to the publicly available modules. The publicly available
+Python modules are well documented both online and in literature. Links to existing
+Python documentation are included where applicable.</p>
+<p>The key Python modules included in the PIPESIM Python Toolkit are:</p>
+<ul class="simple">
+<li><p>Sixgill (Proprietary): The primary Python programming classes and
+functions provided by the PIPESIM Python Toolkit.</p></li>
+<li><p>Manta (Proprietary): A low level Python interface with PIPESIM. Reference
+documentation is included but you are not expected to typically use this
+module.</p></li>
+<li><p>pandas: (Public): A Python module for working with data sets and
+arrays.</p></li>
+</ul>
+<p>The VSCodium code editor is provided as part of the installation and you can use any
+editor to develop scripts. For example, you may choose to edit scripts
+using Atom, Visual Studio, Visual Studio Code, PyCharm, NotePad or NotePad++.</p>
+<p>You can run the PIPESIM Python Toolkit scripts from the desktop or
+you can call them from Excel workbooks.</p>
+<section id="components">
+<h2>Components<a class="headerlink" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/intro.html#components" title="Permalink to this heading">¶</a></h2>
+<p>The PIPESIM Python Toolkit runs independent of the PIPESIM user
+interface (UI). It opens a PIPESIM model, referred to as a session, and
+starts interacting with the model. It is not possible to edit a model
+through both the PIPESIM UI and PIPESIM Python Toolkit simultaneously.
+The PIPESIM Python Toolkit can, however, open any number of sessions and
+work on many models at the same time.</p>
+<p>The underlying technology for interacting with the PIPESIM model is the
+web API. This is a RESTful interface that allows third party vendors to
+integrate with PIPESIM. The PIPESIM Python Toolkit is a software development
+kit (SDK) and you use it to interact with the PIPESIM web API. The web API implementation
+is proprietary to Schlumberger and is documented separately.</p>
+<figure class="align-center" style="width: 80%">
+<a class="reference internal image-reference" href="./Introduction — PIPESIM Python Toolkit 2023.1 documentation_files/NewPOETArchitecture.png"><img alt="_images/NewPOETArchitecture.png" src="./Introduction — PIPESIM Python Toolkit 2023.1 documentation_files/NewPOETArchitecture.png" style="width: 80%;"></a>
+</figure>
+<p>A PIPESIM Python Toolkit session can be considered an input/output (I/O)
+communications channel with a PIPESIM model. You can query the
+model for its contents and parameters; add, delete, and modify the model
+components; and perform tasks on the model. The Sixgill module of the PIPESIM
+Python Toolkit is designed to easily perform these actions with a
+similar user perspective to the PIPESIM UI. The Manta module is a direct reflection of the underlying PIPESIM domain model and is more complex but provides more control.</p>
+<p>The Sixgill module is implemented as a stable interface for working with
+PIPESIM. As PIPESIM evolves with new features and architecture improvements,
+the Sixgill module adapts and maintains a constant programming interface.
+This ensures that scripts are compatible across PIPESIM releases.</p>
+</section>
+<section id="model-contexts">
+<h2>Model Contexts<a class="headerlink" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/intro.html#model-contexts" title="Permalink to this heading">¶</a></h2>
+<p>The PIPESIM Python Toolkit has been developed around the concept of
+querying the model and performing actions on the data. The key points to
+this are:</p>
+<ul class="simple">
+<li><p>Context: This can be considered the area of interest when performing
+the query. It could be an area of the model (for example, Well-01), a set of
+similar components (for example, choke valves), or variations thereof (for example,
+all the choke valves on wells).</p></li>
+<li><p>Parameter: This is a property of a model component within
+the context. You do not need to consider which PIPESIM object
+the property belongs to, just that it is presented as part of the
+context. For example, you can search for bean sizes on wells, and
+the toolkit will query for chokes on wells, knowing that bean size is a choke
+valve property.</p></li>
+<li><p>Value: This is the value of the parameter. It could be a single
+value (for example float), or a table (for example, array).</p></li>
+</ul>
+<p>The context method was designed to present the complex PIPESIM domain
+model in a simplified method similar to the user interface. In particular,
+there are domain aspects that exist in the data model but not in the UI which
+can be both confusing and add complexity. Through the context method, you
+do not need to consider on what object a parameter resides. You only need to present
+a query that identifies the parameter.</p>
+<p>Context queries are built up using the model components. For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Find all the wells</span>
+<span class="n">Well</span><span class="o">=</span><span class="n">ALL</span>
+
+<span class="c1"># Find the well named Well01</span>
+<span class="n">Well</span><span class="o">=</span><span class="s1">'Well01'</span>
+
+<span class="c1"># Find the item named CK1</span>
+<span class="n">Name</span><span class="o">=</span><span class="s1">'CK1'</span>
+
+<span class="c1"># Find the flowline named FL-03</span>
+<span class="n">Flowline</span><span class="o">=</span><span class="s1">'FL-03'</span>
+
+<span class="c1"># Find all the tubing in Well01</span>
+<span class="n">Well</span><span class="o">=</span><span class="s1">'Well01'</span><span class="p">,</span> <span class="n">Tubing</span><span class="o">=</span><span class="n">ALL</span>
+</pre></div>
+</div>
+<p>There are several ways that you can enter contexts.</p>
+<section id="keyword-argument">
+<h3>Keyword Argument<a class="headerlink" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/intro.html#keyword-argument" title="Permalink to this heading">¶</a></h3>
+<p>Keyword Argument is the typical entry method where you enter the component type
+along with the search value (for example, Well=’Well01’). You can chain keyword arguments
+together and enter several at once (for example, Well=’Well01’, Completion=ALL).</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">find</span><span class="p">(</span><span class="n">Well</span><span class="o">=</span><span class="s1">'Well01'</span><span class="p">,</span> <span class="n">Tubing</span><span class="o">=</span><span class="n">ALL</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="dictionary">
+<h3>Dictionary<a class="headerlink" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/intro.html#dictionary" title="Permalink to this heading">¶</a></h3>
+<p>Dictionary is the Python dictionary equivalent to the keyword argument, for
+example, {‘Well’:’Well01’, ‘Completion’:ALL}. You can pass a dictionary in through
+the Python expansion, and a few methods can take dictionary directly:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">find</span><span class="p">(</span><span class="o">**</span><span class="p">{</span><span class="s1">'Well'</span><span class="p">:</span><span class="s1">'Well01'</span><span class="p">,</span> <span class="s1">'Completion'</span><span class="p">:</span><span class="n">ALL</span><span class="p">})</span>
+</pre></div>
+</div>
+</section>
+<section id="string">
+<h3>String<a class="headerlink" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/intro.html#string" title="Permalink to this heading">¶</a></h3>
+<p>You can uniquely identify individual components by a context string
+with a path style representation. This uses the colon delimiter to
+indicate the hierarchy in the model. For example, “Well01:VertComp”
+identifies the completion VertComp on Well01.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">find</span><span class="p">(</span><span class="n">context</span><span class="o">=</span><span class="s2">"Well01:VertComp"</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="model-context-object">
+<h3>Model Context Object<a class="headerlink" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/intro.html#model-context-object" title="Permalink to this heading">¶</a></h3>
+<p>The Sixgill core catalog uses the AbstractModelContext() class for
+cataloging and context manipulations. The model context object can be passed to
+any method that requires a context as an argument.</p>
+</section>
+</section>
+<section id="model-context-nuances">
+<h2>Model Context Nuances<a class="headerlink" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/intro.html#model-context-nuances" title="Permalink to this heading">¶</a></h2>
+<p>The context is a powerful method for filtering and finding components through
+its different search methods.</p>
+<p>The string context identifies one unique component in the model. Methods
+that use it will only manipulate that one component. It is therefore useful
+for specific updates to specific components, or for providing the specific
+context as a parameter. Examples are setting the fluid on a source, or
+making connections between components.</p>
+<p>The keyword argument is the most versatile with identifying anything from
+the full model through to individual components. Each component in the model
+is tagged with keywords and the looking up the context returns all the
+components that are tagged with the keywords.</p>
+<p>To find a specific named component, pass in the name:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">Name</span><span class="o">=</span><span class="s1">'Well'</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>It is recommended to use unique names for all top level items in the PIPESIM
+model. If there are several items named ‘Well’, it will list them all.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">Name</span><span class="o">=</span><span class="s1">'TopsyTurvy'</span><span class="p">)</span>
+<span class="go">['TopsyTurvy', 'TopsyTurvy', 'TopsyTurvy']</span>
+</pre></div>
+</div>
+<p>To find the unique item, the component is specified:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">Name</span><span class="o">=</span><span class="s1">'TopsyTurvy'</span><span class="p">,</span> <span class="n">component</span><span class="o">=</span><span class="n">ModelComponents</span><span class="o">.</span><span class="n">PUMP</span><span class="p">)</span>
+<span class="go">['TopsyTurvy']</span>
+</pre></div>
+</div>
+<p>The difference between passing the ‘Name’ and component is also present for
+subsurface equipment. Any component in a well is considered part of
+the well context and is therefore returned:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">Well</span><span class="o">=</span><span class="s2">"ESP_Well"</span><span class="p">)</span>
+<span class="go">[</span>
+<span class="go">    'ESP_Well',</span>
+<span class="go">    'ESP_Well:Casing',</span>
+<span class="go">    'ESP_Well:ESP_7',</span>
+<span class="go">    'ESP_Well:Packer',</span>
+<span class="go">    'ESP_Well:Source 1',</span>
+<span class="go">    'ESP_Well:Tubing',</span>
+<span class="go">    'ESP_Well:VW_7',</span>
+<span class="go">    'ESP_Well:VW_7:IPRBACKPRESSURE',</span>
+<span class="go">    'ESP_Well:VW_7:IPRDARCY',</span>
+<span class="go">    'ESP_Well:VW_7:IPRFETKOVITCH',</span>
+<span class="go">    'ESP_Well:VW_7:IPRFORCHHEIMER',</span>
+<span class="go">    'ESP_Well:VW_7:IPRHYDRAULICFRACTURE',</span>
+<span class="go">    'ESP_Well:VW_7:IPRJONES',</span>
+<span class="go">    'ESP_Well:VW_7:IPRPIModel',</span>
+<span class="go">    'ESP_Well:VW_7:IPRVERTICALPI',</span>
+<span class="go">    'ESP_Well:VW_7:VW_7:IPRVERTICALPI'</span>
+<span class="go">]</span>
+</pre></div>
+</div>
+<p>Whereas passing in the name just returns the well:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">Name</span><span class="o">=</span><span class="s2">"ESP_Well"</span><span class="p">)</span>
+<span class="go">['ESP_Well']</span>
+</pre></div>
+</div>
+<p>This is useful for querying and manipulating parameters on a high level,
+without needing to specify the exact component:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="n">Well</span><span class="o">=</span><span class="s1">'ESP_Well'</span><span class="p">,</span> <span class="n">parameter</span><span class="o">=</span><span class="s1">'IPRModel'</span><span class="p">)</span>
+<span class="go">'IPRHydraulicFracture'</span>
+</pre></div>
+</div>
+<p>Which could also be done through other more detailed contexts:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="n">Well</span><span class="o">=</span><span class="s1">'ESP_Well'</span><span class="p">,</span> <span class="n">Completion</span><span class="o">=</span><span class="s1">'VW_7'</span><span class="p">,</span> <span class="n">parameter</span><span class="o">=</span><span class="s1">'IPRModel'</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="o">**</span><span class="p">{</span><span class="s1">'Well'</span><span class="p">:</span><span class="s1">'ESP_Well'</span><span class="p">,</span> <span class="s1">'Completion'</span><span class="p">:</span><span class="s1">'VW_7'</span><span class="p">},</span> <span class="n">parameter</span><span class="o">=</span><span class="s1">'IPRModel'</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="s1">'ESP_Well:VW_7'</span><span class="p">,</span> <span class="n">parameter</span><span class="o">=</span><span class="s1">'IPRModel'</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="model-components">
+<h2>Model Components<a class="headerlink" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/intro.html#model-components" title="Permalink to this heading">¶</a></h2>
+<p>All the available model components can be found through the context. The
+find(Name=ALL) method provides a list of all of the components. The
+list includes the context for everything that is considered an object
+in PIPESIM, such as:</p>
+<ul class="simple">
+<li><p>Surface equipment such as pumps, separators, heat exchangers and flowlines.</p></li>
+<li><p>Subsurface items such as casings, completions and ESPs.</p></li>
+<li><p>Compositional fluid components, both predefined and psuedocomponents.</p></li>
+<li><p>Sources, sinks and junctions.</p></li>
+</ul>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/index.html">
+              <img class="logo" src="./Introduction — PIPESIM Python Toolkit 2023.1 documentation_files/PIPESIM.png" alt="Logo">
+            </a></p>
+  <div>
+    <h3><a href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/intro.html#">Introduction</a><ul>
+<li><a class="reference internal" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/intro.html#components">Components</a></li>
+<li><a class="reference internal" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/intro.html#model-contexts">Model Contexts</a><ul>
+<li><a class="reference internal" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/intro.html#keyword-argument">Keyword Argument</a></li>
+<li><a class="reference internal" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/intro.html#dictionary">Dictionary</a></li>
+<li><a class="reference internal" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/intro.html#string">String</a></li>
+<li><a class="reference internal" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/intro.html#model-context-object">Model Context Object</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/intro.html#model-context-nuances">Model Context Nuances</a></li>
+<li><a class="reference internal" href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/intro.html#model-components">Model Components</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/overview.html" title="previous chapter">Overview</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/changes.html" title="next chapter">Changes From Previous Version</a></p>
+  </div>
+<div id="searchbox" style="display: block;" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+      <input type="submit" value="Go">
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/py-modindex.html" title="Python Module Index">modules</a> |</li>
+        <li class="right">
+          <a href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/changes.html" title="Changes From Previous Version">next</a> |</li>
+        <li class="right">
+          <a href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/overview.html" title="Overview">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/index.html">PIPESIM Python Toolkit 2023.1 documentation</a> »</li>
+        <li class="nav-item nav-item-this"><a href="file:///C:/Program%20Files/Schlumberger/Pipesim2023.1/Developer%20Tools/Python%20Toolkit/Help/intro.html">Introduction</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        © Copyright 2023, Schlumberger.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
+    </div>
+  
+</body></html>
